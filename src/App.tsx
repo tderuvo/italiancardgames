@@ -3,6 +3,7 @@ import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
 import ScopaPage from './pages/ScopaPage';
 import HowToPlayScopaPage from './pages/HowToPlayScopaPage';
+import HowToPlayBriscolaPage from './pages/HowToPlayBriscolaPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
 
@@ -18,7 +19,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/play-scopa-online"   element={<ScopaPage />} />
-          <Route path="/how-to-play-scopa" element={<HowToPlayScopaPage />} />
+          <Route path="/how-to-play-scopa"    element={<HowToPlayScopaPage />} />
+          <Route path="/how-to-play-briscola" element={<HowToPlayBriscolaPage />} />
           <Route path="/privacy-policy"    element={<PrivacyPolicyPage />} />
           <Route path="/terms"            element={<TermsPage />} />
           {/* Future routes:
