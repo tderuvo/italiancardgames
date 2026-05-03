@@ -130,7 +130,7 @@ export default function ScopaPage() {
         <p>
           Scopa is a great starting point, but there's more to explore.{' '}
           <Link to="/">Italian Card Games</Link> is home to classic games played with the
-          traditional 40-card deck. <Link to="/">Briscola</Link> — Italy's most popular
+          traditional 40-card deck. <Link to="/how-to-play-briscola">Briscola</Link> — Italy's most popular
           trick-taking game — is coming soon.
         </p>
 
