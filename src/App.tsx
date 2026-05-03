@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import ScopaPage from './pages/ScopaPage';
 import HowToPlayScopaPage from './pages/HowToPlayScopaPage';
 import HowToPlayBriscolaPage from './pages/HowToPlayBriscolaPage';
+import ScopaRulesPage from './pages/ScopaRulesPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
 
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/play-scopa-online"   element={<ScopaPage />} />
           <Route path="/how-to-play-scopa"    element={<HowToPlayScopaPage />} />
           <Route path="/how-to-play-briscola" element={<HowToPlayBriscolaPage />} />
+          <Route path="/scopa-rules"          element={<ScopaRulesPage />} />
           <Route path="/privacy-policy"    element={<PrivacyPolicyPage />} />
           <Route path="/terms"            element={<TermsPage />} />
           {/* Future routes:
