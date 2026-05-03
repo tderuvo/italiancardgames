@@ -9,7 +9,6 @@ export default function Header() {
         </Link>
 
         <nav className="site-header__nav" aria-label="Main navigation">
-          {/* ── Active game links ── */}
           <NavLink
             to="/play-scopa-online"
             className={({ isActive }) =>
@@ -18,22 +17,30 @@ export default function Header() {
           >
             Play Scopa
           </NavLink>
-
-          {/* ── Placeholder links for future games ── */}
-          {/* TODO: replace href with /play-briscola-online when Briscola is built */}
-          <span className="nav-link nav-link--soon">
-            Briscola <em>(soon)</em>
-          </span>
-
-          {/* TODO: replace href with /italian-solitaire when Solitaire is built */}
-          <span className="nav-link nav-link--soon">
-            Solitaire <em>(soon)</em>
-          </span>
-
-          {/* TODO: replace href with /rules when Rules page is built */}
-          <span className="nav-link nav-link--soon">
-            Rules <em>(soon)</em>
-          </span>
+          <NavLink
+            to="/how-to-play-briscola"
+            className={({ isActive }) =>
+              isActive ? 'nav-link nav-link--active' : 'nav-link'
+            }
+          >
+            Briscola
+          </NavLink>
+          <NavLink
+            to="/italian-solitaire"
+            className={({ isActive }) =>
+              isActive ? 'nav-link nav-link--active' : 'nav-link'
+            }
+          >
+            Italian Solitaire
+          </NavLink>
+          <NavLink
+            to="/rules"
+            className={({ isActive }) =>
+              isActive ? 'nav-link nav-link--active' : 'nav-link'
+            }
+          >
+            Rules
+          </NavLink>
         </nav>
       </div>
     </header>

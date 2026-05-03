@@ -5,6 +5,8 @@ import ScopaPage from './pages/ScopaPage';
 import HowToPlayScopaPage from './pages/HowToPlayScopaPage';
 import HowToPlayBriscolaPage from './pages/HowToPlayBriscolaPage';
 import ScopaRulesPage from './pages/ScopaRulesPage';
+import ItalianSolitairePage from './pages/ItalianSolitairePage';
+import RulesPage from './pages/RulesPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
 
@@ -23,13 +25,10 @@ export default function App() {
           <Route path="/how-to-play-scopa"    element={<HowToPlayScopaPage />} />
           <Route path="/how-to-play-briscola" element={<HowToPlayBriscolaPage />} />
           <Route path="/scopa-rules"          element={<ScopaRulesPage />} />
-          <Route path="/privacy-policy"    element={<PrivacyPolicyPage />} />
-          <Route path="/terms"            element={<TermsPage />} />
-          {/* Future routes:
-            <Route path="/play-briscola-online" element={<BriscolaPage />} />
-            <Route path="/italian-solitaire"    element={<SolitairePage />} />
-            <Route path="/rules"                element={<RulesPage />} />
-          */}
+          <Route path="/italian-solitaire"    element={<ItalianSolitairePage />} />
+          <Route path="/rules"                element={<RulesPage />} />
+          <Route path="/privacy-policy"       element={<PrivacyPolicyPage />} />
+          <Route path="/terms"                element={<TermsPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
