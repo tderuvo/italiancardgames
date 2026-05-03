@@ -7,24 +7,27 @@ const GAMES = [
     title: 'Scopa',
     description: 'The classic Italian capture card game. Play against the computer using a traditional 40-card deck.',
     href: '/play-scopa-online',
+    btnLabel: 'Play Scopa →',
     available: true,
     emoji: '♦',
   },
   {
     title: 'Briscola',
-    description: 'Italy\'s most popular trick-taking card game. Coming soon.',
-    href: null,
-    available: false,
+    description: "Italy's most popular trick-taking card game. Learn how to play.",
+    href: '/how-to-play-briscola',
+    btnLabel: 'Learn Briscola →',
+    available: true,
     emoji: '♣',
   },
   {
     title: 'Italian Solitaire',
     description: 'Patience with an Italian twist. Coming soon.',
     href: null,
+    btnLabel: '',
     available: false,
     emoji: '♠',
   },
-] as const;
+];
 
 export default function HomePage() {
   useEffect(() => {
@@ -58,11 +61,13 @@ export default function HomePage() {
             {game.available && game.href ? (
               <>
                 <Link to={game.href} className="game-card__btn">
-                  Play Scopa →
+                  {game.btnLabel}
                 </Link>
-                <p style={{ margin: '0.5rem 0 0', fontSize: '0.8rem', color: '#aaa' }}>
-                  <Link to="/how-to-play-scopa">New? Learn the rules →</Link>
-                </p>
+                {game.title === 'Scopa' && (
+                  <p style={{ margin: '0.5rem 0 0', fontSize: '0.8rem', color: '#aaa' }}>
+                    <Link to="/how-to-play-scopa">New? Learn the rules →</Link>
+                  </p>
+                )}
               </>
             ) : (
               <span className="game-card__soon">Coming soon</span>
