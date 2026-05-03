@@ -56,9 +56,14 @@ export default function HomePage() {
             <h2 className="game-card__title">{game.title}</h2>
             <p className="game-card__desc">{game.description}</p>
             {game.available && game.href ? (
-              <Link to={game.href} className="game-card__btn">
-                Play Scopa →
-              </Link>
+              <>
+                <Link to={game.href} className="game-card__btn">
+                  Play Scopa →
+                </Link>
+                <p style={{ margin: '0.5rem 0 0', fontSize: '0.8rem', color: '#aaa' }}>
+                  <Link to="/how-to-play-scopa">New? Learn the rules →</Link>
+                </p>
+              </>
             ) : (
               <span className="game-card__soon">Coming soon</span>
             )}

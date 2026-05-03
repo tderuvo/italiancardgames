@@ -32,6 +32,9 @@ export default function ScopaPage() {
         <p style={{ textAlign: 'center', fontSize: '0.85rem', color: '#aaa', marginTop: '1rem' }}>
           Press "New Game" to start, or scroll down to learn the rules.
         </p>
+        <p style={{ textAlign: 'center', fontSize: '0.85rem', color: '#aaa', marginTop: '0.5rem' }}>
+          New to the game? <Link to="/how-to-play-scopa">Learn how to play Scopa</Link> →
+        </p>
       </section>
 
       {/* ── SEO content ── */}
@@ -55,7 +58,8 @@ export default function ScopaPage() {
           Scopa is quick to learn but rewards attention and planning. A round usually
           takes ten to fifteen minutes, and a single well-timed play can change the
           outcome. Scopa has been played across Italy for centuries and remains a staple
-          in Italian card game culture.
+          in Italian card game culture. If you're just getting started, see our{' '}
+          <Link to="/how-to-play-scopa">step-by-step Scopa guide</Link>.
         </p>
 
         <h2>How to Play Scopa</h2>
