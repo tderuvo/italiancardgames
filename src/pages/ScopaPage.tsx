@@ -4,11 +4,11 @@ import ScopaGame from '../games/scopa/ScopaGame';
 
 export default function ScopaPage() {
   useEffect(() => {
-    document.title = 'Play Scopa Online – Free Italian Card Game | ItalianCardGames.com';
+    document.title = 'Play Scopa Online – Free Italian Card Game (No Download)';
     const meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
     if (meta) {
       meta.content =
-        'Play Scopa online for free. A classic Italian card game using a traditional 40-card deck. No download or signup — play directly in your browser.';
+        'Play Scopa online for free using a traditional 40-card Italian deck. No signup or download needed — start playing instantly in your browser.';
     }
   }, []);
 
@@ -21,7 +21,8 @@ export default function ScopaPage() {
         <p>
           Play Scopa online for free — no download, no signup required. This browser
           version uses a traditional 40-card Italian deck and lets you play against the
-          computer any time you like.
+          computer any time you like. This page lets you play Scopa online for free in a
+          simple, fast browser experience.
         </p>
       </div>
 
@@ -41,7 +42,8 @@ export default function ScopaPage() {
           Scopa — Italian for "broom" — is one of Italy's most played card games, with
           roots going back centuries. The name comes from the goal of sweeping the table
           clean: if you capture every face-up card in one move, you score a bonus point
-          called a <em>scopa</em>.
+          called a <em>scopa</em>. The Scopa card game is one of the most popular
+          traditional games in Italy.
         </p>
         <p>
           The game uses a traditional 40-card Italian deck with four suits:{' '}
@@ -51,7 +53,9 @@ export default function ScopaPage() {
         </p>
         <p>
           Scopa is quick to learn but rewards attention and planning. A round usually
-          takes ten to fifteen minutes, and a single well-timed play can change the outcome.
+          takes ten to fifteen minutes, and a single well-timed play can change the
+          outcome. Scopa has been played across Italy for centuries and remains a staple
+          in Italian card game culture.
         </p>
 
         <h2>How to Play Scopa</h2>
@@ -139,6 +143,12 @@ export default function ScopaPage() {
         <p>
           Yes — this version is completely free. It runs in your browser with no account,
           no app, and no download needed.
+        </p>
+
+        <h3>How do you play Scopa online?</h3>
+        <p>
+          You can play Scopa online for free directly in your browser on this page. No
+          download or signup is required.
         </p>
 
         <h3>What cards are used in Scopa?</h3>
