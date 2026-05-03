@@ -21,10 +21,10 @@ const GAMES = [
   },
   {
     title: 'Italian Solitaire',
-    description: 'Patience with an Italian twist. Coming soon.',
-    href: null,
-    btnLabel: '',
-    available: false,
+    description: 'Explore Italian solitaire-style and classic 40-card games.',
+    href: '/italian-solitaire',
+    btnLabel: 'Explore Games →',
+    available: true,
     emoji: '♠',
   },
 ];
