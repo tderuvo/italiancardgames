@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
 import ScopaPage from './pages/ScopaPage';
+import HowToPlayScopaPage from './pages/HowToPlayScopaPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
 
@@ -16,8 +17,9 @@ export default function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/play-scopa-online" element={<ScopaPage />} />
-          <Route path="/privacy-policy"   element={<PrivacyPolicyPage />} />
+          <Route path="/play-scopa-online"   element={<ScopaPage />} />
+          <Route path="/how-to-play-scopa" element={<HowToPlayScopaPage />} />
+          <Route path="/privacy-policy"    element={<PrivacyPolicyPage />} />
           <Route path="/terms"            element={<TermsPage />} />
           {/* Future routes:
             <Route path="/play-briscola-online" element={<BriscolaPage />} />
