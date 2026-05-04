@@ -9,6 +9,7 @@ import ItalianSolitairePage from './pages/ItalianSolitairePage';
 import RulesPage from './pages/RulesPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
+import ContactPage from './pages/ContactPage';
 
 // ── Route map ────────────────────────────────────────────────────────────────
 // To add Briscola: import BriscolaPage and add a Route below.
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/rules"                element={<RulesPage />} />
           <Route path="/privacy-policy"       element={<PrivacyPolicyPage />} />
           <Route path="/terms"                element={<TermsPage />} />
+          <Route path="/contact"              element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>

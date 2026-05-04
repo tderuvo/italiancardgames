@@ -16,6 +16,7 @@ const ROUTES = [
   '/rules',
   '/privacy-policy',
   '/terms',
+  '/contact',
 ];
 
 const today = new Date().toISOString().split('T')[0];

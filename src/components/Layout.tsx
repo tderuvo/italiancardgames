@@ -19,6 +19,8 @@ export default function Layout({ children }: LayoutProps) {
           <Link to="/privacy-policy">Privacy Policy</Link>
           <span aria-hidden="true">·</span>
           <Link to="/terms">Terms</Link>
+          <span aria-hidden="true">·</span>
+          <Link to="/contact">Contact</Link>
         </p>
       </footer>
     </div>
