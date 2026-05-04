@@ -10,6 +10,7 @@ import RulesPage from './pages/RulesPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
 import ContactPage from './pages/ContactPage';
+import ContactSuccessPage from './pages/ContactSuccessPage';
 
 // ── Route map ────────────────────────────────────────────────────────────────
 // To add Briscola: import BriscolaPage and add a Route below.
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="/privacy-policy"       element={<PrivacyPolicyPage />} />
           <Route path="/terms"                element={<TermsPage />} />
           <Route path="/contact"              element={<ContactPage />} />
+          <Route path="/contact-success"      element={<ContactSuccessPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>

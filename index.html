@@ -9,5 +9,13 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Hidden form so Netlify detects it at build time (required for React SPAs) -->
+    <form name="contact" data-netlify="true" hidden aria-hidden="true">
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text"  name="name"    aria-label="Name" />
+      <input type="email" name="email"   aria-label="Email" />
+      <textarea           name="message" aria-label="Message"></textarea>
+    </form>
   </body>
 </html>
