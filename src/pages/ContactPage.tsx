@@ -55,7 +55,7 @@ export default function ContactPage() {
           />
         </label>
 
-        <button className="contact-form__btn" type="submit">
+        <button type="submit" className="contact-submit">
           Send Message
         </button>
       </form>
