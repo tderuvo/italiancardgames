@@ -18,13 +18,12 @@ export default function ScopaPage() {
       {/* ── Page heading ── */}
       <div className="page-scopa__hero">
         <h1>Play Scopa Online – Free Italian Card Game</h1>
-        <p>
-          Play Scopa online for free — no download, no signup required. This browser
-          version uses a traditional 40-card Italian deck and lets you play against the
-          computer any time you like. This page lets you play Scopa online for free in a
-          simple, fast browser experience.
-        </p>
       </div>
+
+      {/* ── Above-game helper text ── */}
+      <p className="page-scopa__subhead">
+        Play instantly in your browser using a traditional Italian 40-card deck.
+      </p>
 
       {/* ── Game ── */}
       <section aria-label="Scopa card game">
@@ -36,6 +35,16 @@ export default function ScopaPage() {
           New to the game? <Link to="/how-to-play-scopa">Learn how to play Scopa</Link> →
         </p>
       </section>
+
+      {/* ── Intro paragraph — moved below game ── */}
+      <div className="page-scopa__intro">
+        <p>
+          Play Scopa online for free — no download, no signup required. This browser
+          version uses a traditional 40-card Italian deck and lets you play against the
+          computer any time you like. This page lets you play Scopa online for free in a
+          simple, fast browser experience.
+        </p>
+      </div>
 
       {/* ── SEO content ── */}
       <div className="seo-section">
