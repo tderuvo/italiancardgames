@@ -2,12 +2,12 @@
 // Pure functions: no React, no side-effects.
 // Briscola and Solitaire utilities will live in their own sibling folders.
 
-import { Card } from '../../utils/deck';
+import { ItalianCard as Card } from '../../cards/italianDeck';
 
 // ── Capture logic ────────────────────────────────────────────────────────────
 
 /**
- * Return every subset of `table` whose ranks sum to `played.rank`.
+ * Return every subset of `table` whose ranks sum to `played.value`.
  * Includes single-card exact matches and multi-card combinations.
  * The table typically has ≤12 cards so brute-force bitmask is fine.
  */
@@ -20,10 +20,10 @@ export function findCaptureSets(played: Card, table: Card[]): Card[][] {
     for (let i = 0; i < n; i++) {
       if (mask & (1 << i)) {
         subset.push(table[i]);
-        sum += table[i].rank;
+        sum += table[i].value;
       }
     }
-    if (sum === played.rank) sets.push(subset);
+    if (sum === played.value) sets.push(subset);
   }
   return sets;
 }
@@ -113,8 +113,8 @@ export function computeScore(
   }
 
   // Most Coins
-  const pCoins = playerCaptures.filter(c => c.suit === 'Coins').length;
-  const cCoins = computerCaptures.filter(c => c.suit === 'Coins').length;
+  const pCoins = playerCaptures.filter(c => c.suit === 'coins').length;
+  const cCoins = computerCaptures.filter(c => c.suit === 'coins').length;
   if (pCoins > cCoins) {
     playerScore++;
     details.push(`Most Coins: You (${pCoins} vs ${cCoins})`);
@@ -126,8 +126,8 @@ export function computeScore(
   }
 
   // Settebello — 7 of Coins
-  const playerHasSette = playerCaptures.some(c => c.rank === 7 && c.suit === 'Coins');
-  const computerHasSette = computerCaptures.some(c => c.rank === 7 && c.suit === 'Coins');
+  const playerHasSette = playerCaptures.some(c => c.value === 7 && c.suit === 'coins');
+  const computerHasSette = computerCaptures.some(c => c.value === 7 && c.suit === 'coins');
   if (playerHasSette) {
     playerScore++;
     details.push('Settebello (7 of Coins): You');

@@ -3,7 +3,13 @@
 // To embed in a different layout, just drop <ScopaGame /> anywhere.
 
 import { useEffect, useReducer, useCallback } from 'react';
-import { Card, buildDeck, shuffle, cardLabel } from '../../utils/deck';
+import {
+  ItalianCard as Card,
+  createItalianDeck as buildDeck,
+  shuffleDeck as shuffle,
+  getCardDisplayLabel as cardLabel,
+} from '../../cards/italianDeck';
+import { CardView } from '../../cards/CardView';
 import {
   findCaptureSets,
   getCapturableTableCards,
@@ -311,45 +317,6 @@ function reducer(state: GameState, action: Action): GameState {
   }
 }
 
-// ── Sub-components ───────────────────────────────────────────────────────────
-
-interface CardViewProps {
-  card: Card;
-  onClick?: () => void;
-  selected?: boolean;
-  highlighted?: boolean;
-  faceDown?: boolean;
-}
-
-function CardView({ card, onClick, selected, highlighted, faceDown }: CardViewProps) {
-  if (faceDown) {
-    return <div className="sg-card sg-card--back">🂠</div>;
-  }
-
-  const suitClass = `sg-card--${card.suit.toLowerCase()}`;
-  const cls = [
-    'sg-card',
-    suitClass,
-    selected ? 'sg-card--selected' : '',
-    highlighted ? 'sg-card--highlighted' : '',
-    onClick ? 'sg-card--clickable' : '',
-  ]
-    .filter(Boolean)
-    .join(' ');
-
-  return (
-    <button className={cls} onClick={onClick} aria-label={cardLabel(card)}>
-      <span className="sg-card__rank">{card.rank}</span>
-      <span className="sg-card__suit-icon">{suitIcon(card.suit)}</span>
-      <span className="sg-card__label">{cardLabel(card)}</span>
-    </button>
-  );
-}
-
-function suitIcon(suit: Card['suit']): string {
-  return { Coins: '◉', Cups: '♦', Swords: '✦', Batons: '⚑' }[suit];
-}
-
 // ── Main component ───────────────────────────────────────────────────────────
 
 export default function ScopaGame() {
@@ -412,7 +379,7 @@ export default function ScopaGame() {
         </div>
         <div className="sg-cards">
           {state.computerHand.map((_, i) => (
-            <div key={i} className="sg-card sg-card--back">🂠</div>
+            <CardView key={i} faceDown />
           ))}
         </div>
       </div>

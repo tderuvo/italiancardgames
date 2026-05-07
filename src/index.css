@@ -253,6 +253,45 @@ img, svg { display: block; max-width: 100%; }
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
+   ITALIAN CARD ENGINE  — shared across all games
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* Base class applied to every card regardless of game */
+.italian-card {
+  /* Sizing and layout handled by the per-game wrapper class (e.g. .sg-card) */
+}
+
+/* When a real card image has loaded — remove text padding, fill the frame */
+.italian-card--has-image {
+  padding: 0;
+  overflow: hidden;
+}
+
+/* The actual <img> when artwork is available */
+.italian-card-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+/* Wrapper for the text fallback (rank + icon + label) */
+.italian-card-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Face-down back — visual handled by .sg-card--back; class available for overrides */
+.italian-card--back { }
+
+/* ══════════════════════════════════════════════════════════════════════════
    SCOPA GAME COMPONENT  (sg- prefix = scopa game)
    ══════════════════════════════════════════════════════════════════════ */
 
@@ -319,8 +358,8 @@ img, svg { display: block; max-width: 100%; }
 .sg-cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  min-height: 64px;
+  gap: 0.65rem;
+  min-height: 100px;
   align-items: flex-start;
 }
 .sg-empty {
@@ -334,25 +373,25 @@ img, svg { display: block; max-width: 100%; }
 .sg-card {
   background: #fffef8;
   border: 2px solid #ddd5c4;
-  border-radius: 8px;
-  width: 68px;
-  height: 90px;
+  border-radius: 10px;
+  width: 102px;
+  height: 136px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2px;
+  gap: 4px;
   font-family: var(--font);
   cursor: default;
   transition: transform 0.12s, box-shadow 0.12s, border-color 0.12s;
   position: relative;
-  padding: 4px;
+  padding: 6px;
 }
 .sg-card--back {
   background: #1d5c3e;
   border-color: #2d7a54;
   color: rgba(255,255,255,0.3);
-  font-size: 2rem;
+  font-size: 2.8rem;
   cursor: default;
 }
 .sg-card--clickable {
@@ -379,22 +418,22 @@ img, svg { display: block; max-width: 100%; }
 }
 
 .sg-card__rank {
-  font-size: 0.7rem;
+  font-size: 0.95rem;
   font-weight: 800;
   color: #374151;
   line-height: 1;
 }
 .sg-card__suit-icon {
-  font-size: 1.3rem;
+  font-size: 1.85rem;
   line-height: 1;
 }
 .sg-card__label {
-  font-size: 0.6rem;
+  font-size: 0.78rem;
   color: #6b7280;
   text-align: center;
   line-height: 1.2;
   word-break: break-word;
-  max-width: 58px;
+  max-width: 88px;
 }
 
 /* Suit colours */
@@ -565,12 +604,25 @@ img, svg { display: block; max-width: 100%; }
 }
 .contact-submit:hover { background-color: #174a32; }
 
+/* ── Tablet tweaks ───────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .sg-card { width: 80px; height: 108px; border-radius: 9px; }
+  .sg-card__rank { font-size: 0.82rem; }
+  .sg-card__suit-icon { font-size: 1.5rem; }
+  .sg-card__label { font-size: 0.68rem; max-width: 68px; }
+  .sg-card--back { font-size: 2.2rem; }
+  .sg-cards { min-height: 80px; gap: 0.55rem; }
+}
+
 /* ── Mobile tweaks ───────────────────────────────────────────────────────── */
 @media (max-width: 540px) {
   .sg { padding: 0.9rem; gap: 0.75rem; }
-  .sg-card { width: 58px; height: 78px; }
-  .sg-card__suit-icon { font-size: 1.1rem; }
-  .sg-card__label { font-size: 0.54rem; }
+  .sg-card { width: 64px; height: 86px; border-radius: 8px; gap: 2px; padding: 4px; }
+  .sg-card__rank { font-size: 0.7rem; }
+  .sg-card__suit-icon { font-size: 1.2rem; }
+  .sg-card__label { font-size: 0.56rem; max-width: 54px; }
+  .sg-card--back { font-size: 1.8rem; }
+  .sg-cards { min-height: 64px; gap: 0.45rem; }
   .site-header__inner { gap: 0.75rem; }
   .nav-link { padding: 0.3rem 0.5rem; font-size: 0.8rem; }
   .sg-gameover__pts { font-size: 1.8rem; }
