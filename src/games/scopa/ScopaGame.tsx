@@ -2,7 +2,7 @@
 // Self-contained game component. Manages all game state internally.
 // To embed in a different layout, just drop <ScopaGame /> anywhere.
 
-import { useEffect, useReducer, useCallback } from 'react';
+import { useEffect, useReducer, useCallback, useRef, useState } from 'react';
 import {
   ItalianCard as Card,
   createItalianDeck as buildDeck,
@@ -144,22 +144,31 @@ function reducer(state: GameState, action: Action): GameState {
 
     // ── Player picks a card from their hand ──────────────────────────────────
     case 'SELECT_HAND_CARD': {
-      if (state.turnPhase !== 'player-select') return state;
+      // Allow re-selection (or cancel) at any point during the player's turn,
+      // not only in 'player-select'. This fixes Cancel being a no-op during
+      // 'player-no-capture', and lets the player switch cards mid-selection
+      // without needing to Cancel first.
+      const isPlayerTurn =
+        state.turnPhase === 'player-select' ||
+        state.turnPhase === 'player-capture' ||
+        state.turnPhase === 'player-no-capture';
+      if (!isPlayerTurn) return state;
 
-      // Toggle selection off
+      // Clicking the already-selected card deselects it (toggle off / cancel)
       if (state.pendingCard?.id === action.card.id) {
         return {
           ...state,
           pendingCard: null,
           capturableCards: [],
+          turnPhase: 'player-select', // explicitly reset; was missing before
           message: 'Select a card from your hand.',
         };
       }
 
+      // Selecting a new card — works even if another card was already pending
       const capturable = getCapturableTableCards(action.card, state.tableCards);
 
       if (capturable.length === 0) {
-        // No captures — confirm with button
         return {
           ...state,
           pendingCard: action.card,
@@ -321,6 +330,32 @@ function reducer(state: GameState, action: Action): GameState {
 
 export default function ScopaGame() {
   const [state, dispatch] = useReducer(reducer, null, freshGame);
+  const containerRef  = useRef<HTMLDivElement>(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  // Sync isFullscreen with the browser's actual state.
+  // Handles both the button and the user pressing Escape natively.
+  useEffect(() => {
+    const onChange = () => setIsFullscreen(!!document.fullscreenElement);
+    document.addEventListener('fullscreenchange',        onChange);
+    document.addEventListener('webkitfullscreenchange',  onChange);
+    return () => {
+      document.removeEventListener('fullscreenchange',        onChange);
+      document.removeEventListener('webkitfullscreenchange',  onChange);
+    };
+  }, []);
+
+  const toggleFullscreen = useCallback(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    if (!document.fullscreenElement) {
+      const req = el.requestFullscreen || (el as any).webkitRequestFullscreen;
+      req?.call(el).catch(() => {});
+    } else {
+      const exit = document.exitFullscreen || (document as any).webkitExitFullscreen;
+      exit?.call(document);
+    }
+  }, []);
 
   // Trigger computer turn after a short delay for better UX
   useEffect(() => {
@@ -349,7 +384,7 @@ export default function ScopaGame() {
     findCaptureSets(card, state.tableCards).length > 0;
 
   return (
-    <div className="sg">
+    <div className={`sg${isFullscreen ? ' sg--fullscreen' : ''}`} ref={containerRef}>
 
       {/* ── Header row ─────────────────────────────────────────────────────── */}
       <div className="sg-topbar">
@@ -357,12 +392,21 @@ export default function ScopaGame() {
           <span>You: <strong>{state.score?.playerScore ?? '—'}</strong></span>
           <span>Computer: <strong>{state.score?.computerScore ?? '—'}</strong></span>
         </div>
-        <button
-          className="sg-btn sg-btn--new"
-          onClick={() => dispatch({ type: 'NEW_GAME' })}
-        >
-          New Game
-        </button>
+        <div className="sg-topbar__actions">
+          <button
+            className="sg-btn sg-btn--fs"
+            onClick={toggleFullscreen}
+            title={isFullscreen ? 'Exit fullscreen' : 'Fullscreen'}
+          >
+            {isFullscreen ? '⛶  Exit Fullscreen' : '⛶  Fullscreen'}
+          </button>
+          <button
+            className="sg-btn sg-btn--new"
+            onClick={() => dispatch({ type: 'NEW_GAME' })}
+          >
+            New Game
+          </button>
+        </div>
       </div>
 
       {/* ── Computer area ───────────────────────────────────────────────────── */}

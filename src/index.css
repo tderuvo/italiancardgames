@@ -481,6 +481,15 @@ img, svg { display: block; max-width: 100%; }
 .sg-btn--place:hover { background: #047857; }
 .sg-btn--cancel { background: rgba(255,255,255,0.15); color: #fff; }
 .sg-btn--cancel:hover { background: rgba(255,255,255,0.25); }
+.sg-btn--fs    { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.82); }
+.sg-btn--fs:hover { background: rgba(255,255,255,0.22); color: #fff; }
+
+.sg-topbar__actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
 /* ── Game over panel ── */
 .sg-gameover {
@@ -603,6 +612,175 @@ img, svg { display: block; max-width: 100%; }
   opacity: 1;
 }
 .contact-submit:hover { background-color: #174a32; }
+
+/* ── Fullscreen mode ─────────────────────────────────────────────────────── */
+/* .sg--fullscreen is toggled by React state (mirrors document.fullscreenElement). */
+/* The :fullscreen pseudo-class handles the container's own sizing/shape.        */
+
+.sg:fullscreen,
+.sg:-webkit-full-screen {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  overflow-y: auto;
+  padding: 1.5rem 2.5rem;
+  box-sizing: border-box;
+}
+
+/* ── Fullscreen centered layout ──────────────────────────────────────────── */
+/* Each gameplay section aligns to a centered 960px column on the green felt. */
+/* The .sg background still fills the full screen; only content is narrowed.  */
+
+.sg--fullscreen .sg-topbar,
+.sg--fullscreen .sg-section,
+.sg--fullscreen .sg-message,
+.sg--fullscreen .sg-action,
+.sg--fullscreen .sg-gameover,
+.sg--fullscreen .sg-deck-info {
+  max-width: 960px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* Table cards centered within the section — focal point of the table */
+.sg--fullscreen .sg-section--table .sg-cards {
+  justify-content: center;
+}
+
+/* ── Fullscreen card scaling ─────────────────────────────────────────────── */
+/* ~33% larger than desktop default (102×136 → 136×182).                      */
+/* Aspect ratio is preserved: 1:1.34 throughout.                               */
+
+.sg--fullscreen {
+  gap: 1.4rem;
+}
+.sg--fullscreen .sg-card {
+  width: 136px;
+  height: 182px;
+  border-radius: 12px;
+  padding: 8px;
+  gap: 5px;
+}
+.sg--fullscreen .sg-card__rank       { font-size: 1.22rem; }
+.sg--fullscreen .sg-card__suit-icon  { font-size: 2.5rem; }
+.sg--fullscreen .sg-card__label      { font-size: 1.0rem; max-width: 118px; }
+.sg--fullscreen .sg-card--back       { font-size: 3.8rem; }
+.sg--fullscreen .sg-cards            { gap: 0.85rem; min-height: 130px; }
+.sg--fullscreen .sg-section--table   { padding: 1.1rem; }
+
+/* ── Fullscreen fan layout ───────────────────────────────────────────────── */
+/* Fan transforms use CSS custom properties so hover/selected states can       */
+/* adjust only the --lift-y variable without losing the rotation.              */
+
+/* Center section labels */
+.sg--fullscreen .sg-section--player .sg-section__label,
+.sg--fullscreen .sg-section--computer .sg-section__label {
+  justify-content: center;
+}
+
+/* ── Shared fan container rules ── */
+
+.sg--fullscreen .sg-section--computer .sg-cards,
+.sg--fullscreen .sg-section--player .sg-cards {
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  overflow: visible;
+}
+
+.sg--fullscreen .sg-section--computer .sg-cards { padding-bottom: 1.25rem; }
+.sg--fullscreen .sg-section--player .sg-cards   { padding-bottom: 2rem; }
+
+/* Shared: each card gets a stacking context and overlaps its left neighbour */
+.sg--fullscreen .sg-section--computer .sg-cards > *,
+.sg--fullscreen .sg-section--player .sg-cards > * {
+  position: relative;
+  flex-shrink: 0;
+}
+.sg--fullscreen .sg-section--computer .sg-cards > * + *,
+.sg--fullscreen .sg-section--player .sg-cards > * + * {
+  margin-left: -38px;
+}
+
+/* ── Player hand fan ── */
+
+.sg--fullscreen .sg-section--player .sg-cards > * {
+  --fan-rot: 0deg;
+  --fan-y:   0px;
+  --lift-y:  0px;
+  transform: rotate(var(--fan-rot)) translateY(calc(var(--fan-y) + var(--lift-y)));
+}
+
+/* 1 card in hand */
+.sg--fullscreen .sg-section--player .sg-cards > *:only-child {
+  --fan-rot: 0deg; --fan-y: 0px;
+}
+
+/* 2 cards in hand */
+.sg--fullscreen .sg-section--player .sg-cards > *:nth-child(1):nth-last-child(2) {
+  --fan-rot: -5deg; --fan-y: 8px; z-index: 1;
+}
+.sg--fullscreen .sg-section--player .sg-cards > *:nth-child(2):nth-last-child(1) {
+  --fan-rot:  5deg; --fan-y: 8px; z-index: 2;
+}
+
+/* 3 cards in hand */
+.sg--fullscreen .sg-section--player .sg-cards > *:nth-child(1):nth-last-child(3) {
+  --fan-rot: -9deg; --fan-y: 16px; z-index: 1;
+}
+.sg--fullscreen .sg-section--player .sg-cards > *:nth-child(2):nth-last-child(2) {
+  --fan-rot:  0deg; --fan-y:  0px; z-index: 3;
+}
+.sg--fullscreen .sg-section--player .sg-cards > *:nth-child(3):nth-last-child(1) {
+  --fan-rot:  9deg; --fan-y: 16px; z-index: 2;
+}
+
+/* Hover: lift card above the arc */
+.sg--fullscreen .sg-section--player .sg-cards > *.sg-card--clickable:hover {
+  --lift-y: -16px;
+  z-index: 20;
+}
+
+/* Selected: lift higher so it reads as "in play" */
+.sg--fullscreen .sg-section--player .sg-cards > *.sg-card--selected {
+  --lift-y: -22px;
+  z-index: 20;
+}
+
+/* ── Computer hand fan (mirrored — as if sitting across the table) ── */
+
+.sg--fullscreen .sg-section--computer .sg-cards > * {
+  --fan-rot: 0deg;
+  --fan-y:   0px;
+  transform: rotate(var(--fan-rot)) translateY(var(--fan-y));
+}
+
+/* 1 card */
+.sg--fullscreen .sg-section--computer .sg-cards > *:only-child {
+  --fan-rot: 0deg; --fan-y: 0px;
+}
+
+/* 2 cards */
+.sg--fullscreen .sg-section--computer .sg-cards > *:nth-child(1):nth-last-child(2) {
+  --fan-rot:  5deg; --fan-y: 8px; z-index: 2;
+}
+.sg--fullscreen .sg-section--computer .sg-cards > *:nth-child(2):nth-last-child(1) {
+  --fan-rot: -5deg; --fan-y: 8px; z-index: 1;
+}
+
+/* 3 cards */
+.sg--fullscreen .sg-section--computer .sg-cards > *:nth-child(1):nth-last-child(3) {
+  --fan-rot:  9deg; --fan-y: 16px; z-index: 1;
+}
+.sg--fullscreen .sg-section--computer .sg-cards > *:nth-child(2):nth-last-child(2) {
+  --fan-rot:  0deg; --fan-y:  0px; z-index: 3;
+}
+.sg--fullscreen .sg-section--computer .sg-cards > *:nth-child(3):nth-last-child(1) {
+  --fan-rot: -9deg; --fan-y: 16px; z-index: 2;
+}
 
 /* ── Tablet tweaks ───────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
