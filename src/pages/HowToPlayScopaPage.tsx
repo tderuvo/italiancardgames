@@ -114,6 +114,13 @@ export default function HowToPlayScopaPage() {
         <Link to="/play-scopa-online">Play Scopa Online →</Link>
       </p>
 
+      <h2>Next Step</h2>
+      <p>
+        Now that you know the rules, take your game further with practical tips on reading
+        the table, protecting the Settebello, and planning ahead.{' '}
+        <Link to="/scopa-strategy">Read the Scopa Strategy Guide →</Link>
+      </p>
+
       <p>
         <Link to="/">← Back to Italian Card Games</Link>
       </p>

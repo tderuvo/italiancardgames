@@ -11,6 +11,7 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
 import ContactPage from './pages/ContactPage';
 import ContactSuccessPage from './pages/ContactSuccessPage';
+import ScopaStrategyPage from './pages/ScopaStrategyPage';
 
 // ── Route map ────────────────────────────────────────────────────────────────
 // To add Briscola: import BriscolaPage and add a Route below.
@@ -27,6 +28,7 @@ export default function App() {
           <Route path="/how-to-play-scopa"    element={<HowToPlayScopaPage />} />
           <Route path="/how-to-play-briscola" element={<HowToPlayBriscolaPage />} />
           <Route path="/scopa-rules"          element={<ScopaRulesPage />} />
+          <Route path="/scopa-strategy"       element={<ScopaStrategyPage />} />
           <Route path="/italian-solitaire"    element={<ItalianSolitairePage />} />
           <Route path="/rules"                element={<RulesPage />} />
           <Route path="/privacy-policy"       element={<PrivacyPolicyPage />} />

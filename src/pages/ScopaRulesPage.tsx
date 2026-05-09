@@ -170,6 +170,12 @@ export default function ScopaRulesPage() {
       </ul>
 
       <p>
+        Once you understand the rules, explore our{' '}
+        <Link to="/scopa-strategy">Scopa strategy guide</Link> to start thinking more
+        deeply about table control, card tracking, and planning ahead.
+      </p>
+
+      <p>
         You can also learn{' '}
         <Link to="/how-to-play-briscola">how to play Briscola</Link>, another popular
         Italian card game played with the same 40-card deck.
