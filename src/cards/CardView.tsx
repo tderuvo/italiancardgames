@@ -26,6 +26,8 @@ import {
 } from './italianDeck';
 import { getSuitIcon } from './cardAssets';
 
+const BACK_IMAGE_PATH = '/cards/back.png';
+
 // ── Props ─────────────────────────────────────────────────────────────────────
 
 export interface CardViewProps {
@@ -47,10 +49,10 @@ export function CardView({
   highlighted = false,
   className = '',
 }: CardViewProps) {
-  const [imgState, setImgState] = useState<'pending' | 'loaded' | 'error'>('pending');
+  const [imgState,     setImgState]     = useState<'pending' | 'loaded' | 'error'>('pending');
+  const [backImgState, setBackImgState] = useState<'pending' | 'loaded' | 'error'>('pending');
 
-  // Silently preload the card image; always render the text fallback until
-  // the image is confirmed to exist and fully loaded.
+  // Silently preload the face-up card image; show text fallback until confirmed.
   const imagePath = card && !faceDown ? getCardImagePath(card) : null;
 
   useEffect(() => {
@@ -63,20 +65,41 @@ export function CardView({
     return () => { img.onload = null; img.onerror = null; };
   }, [imagePath]);
 
+  // Silently preload the card back image; fall back to placeholder on error.
+  useEffect(() => {
+    if (!faceDown) return;
+    const img = new Image();
+    img.onload  = () => setBackImgState('loaded');
+    img.onerror = () => setBackImgState('error');
+    img.src = BACK_IMAGE_PATH;
+    return () => { img.onload = null; img.onerror = null; };
+  }, [faceDown]);
+
   // ── Face-down card ─────────────────────────────────────────────────────────
 
   if (faceDown) {
+    const hasBackImage = backImgState === 'loaded';
     return (
       <div
         className={[
           'italian-card',
           'italian-card--back',
+          hasBackImage ? 'italian-card--has-image' : '',
           'sg-card',
           'sg-card--back',
           className,
         ].filter(Boolean).join(' ')}
       >
-        🂠
+        {hasBackImage ? (
+          <img
+            src={BACK_IMAGE_PATH}
+            alt=""
+            className="italian-card-image"
+            draggable={false}
+          />
+        ) : (
+          '🂠'
+        )}
       </div>
     );
   }
