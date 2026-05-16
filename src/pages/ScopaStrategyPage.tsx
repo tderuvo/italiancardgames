@@ -3,164 +3,269 @@ import { Link } from 'react-router-dom';
 
 export default function ScopaStrategyPage() {
   useEffect(() => {
-    document.title = 'Scopa Strategy Guide | Tips to Win at Scopa';
+    document.title = 'Scopa Strategy – Tips to Improve Your Italian Card Game';
+
     const meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
     if (meta) {
       meta.content =
-        'Learn practical Scopa strategy tips including table control, card tracking, protecting the Settebello, and planning scopas.';
+        'Learn practical Scopa strategy tips including memory, timing, table control, and how to improve your game using traditional Italian card tactics.';
     }
+
+    let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', 'https://www.italiancardgames.com/scopa-strategy');
+
+    return () => {
+      const c = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+      if (c) c.remove();
+    };
   }, []);
 
   return (
     <div className="seo-section">
 
-      <h1>Scopa Strategy Guide</h1>
+      <h1>Scopa Strategy – How to Improve Your Game</h1>
 
       <p>
-        Scopa is easy to pick up — but once you start paying attention to what's on the
-        table, what's been played, and what your opponent is likely holding, the game opens
-        up in a completely different way. This guide covers the practical thinking that
-        separates a player who wins occasionally from one who wins consistently. If you
-        haven't played before, try{' '}
-        <Link to="/play-scopa-online">Play Scopa Online</Link> to get a feel for the
-        mechanics first.
+        Scopa is one of those Italian card games that takes a few minutes to learn and a lot
+        longer to really understand. The rules are simple enough — capture cards, count points,
+        first to 11 wins. But beneath that simplicity is a real game of memory, timing, and
+        table control. The player who wins consistently isn't the one who grabs the most cards
+        early. It's the one who reads the position and plays accordingly.
       </p>
 
-      <h2>Think Before Capturing</h2>
       <p>
-        The instinct to grab a card the moment you can is strong — but it's often the wrong
-        move. Before you capture, ask yourself what you're leaving behind. Taking one card
-        now might gift your opponent an easy combination on their next turn. Sometimes the
-        smarter play is to place a card on the table and let the position build in your
-        favour. Patience is a real weapon in Scopa.
+        This guide covers practical Scopa strategy for players who already know the rules. If
+        you're still getting familiar with the mechanics, start with the{' '}
+        <Link to="/how-to-play-scopa">beginner Scopa guide</Link> first, then come back here.
       </p>
+
       <p>
-        This is especially true when you're deciding between two possible captures. One
-        might score you a point now; the other might deny your opponent a point later. The
-        second one usually wins.
+        The game is played with a traditional 40-card deck divided into four suits: Coins,
+        Cups, Swords, and Batons — ten cards each. Once you understand that structure, and what
+        each card is worth in the scoring system, your whole approach to Scopa strategy
+        changes. You stop reacting to the table and start shaping it.
       </p>
 
       <h2>Control the Table</h2>
+
       <p>
-        A strong Scopa player is always thinking about what the table looks like for their
-        opponent. If you leave a 3 and a 4 on the table, you've handed your opponent a free
-        capture with any 7. Try to leave combinations that are hard to match — odd totals,
-        spread-out values, or cards that require your opponent to use something they might
-        not have.
+        The most common mistake in Scopa is capturing whenever you can. It feels productive —
+        you're building your pile, running up your card count. But every capture also shapes
+        what stays on the table, and what stays is what your opponent gets to work with.
       </p>
+
       <p>
-        When you have a choice, leave the table in a position that forces awkward plays.
-        Crowding the table with low-value cards your opponent can't use is also a valid
-        tactic — it limits their options and can push them into placing cards instead of
-        capturing.
+        If you leave a 3 and a 4 sitting on the table, you've handed anyone holding a 7 a free
+        capture. A 2 and a 5 is the same problem. A 1 and a 6. Before you take anything, look
+        at what remains. If it sums cleanly to a common value, you may be doing more harm than
+        good by playing that capture.
+      </p>
+
+      <p>
+        Strong players aim to leave the table in states that are hard to match — awkward totals,
+        spread values, combinations that require two or three specific cards at once. This limits
+        what your opponent can do with their hand and forces them to place rather than capture.
+        Controlling the table is how you win rounds without always holding the better cards.
       </p>
 
       <h2>Watch Which Cards Have Been Played</h2>
+
       <p>
-        Card tracking is one of the highest-value skills you can develop. There are only 40
-        cards in the deck, and once you know the structure — four suits, Ace through 7 plus
-        Jack, Knight, and King — you can start keeping a rough mental tally of what's gone.
-        If three 5s have already been captured, you know only one remains. That changes how
-        you play cards that would normally target a 5.
+        There are only 40 cards in the deck. That's a manageable number if you train yourself
+        to pay attention. You don't need to track every card — just the ones that carry scoring
+        weight.
       </p>
+
       <p>
-        You don't need a perfect memory. Focus on the cards that matter most: the 7 of
-        Coins, the high Coins cards, and cards that complete dangerous combinations. As the
-        deck gets smaller, knowing what's left becomes critical.
+        Experienced Italian players focus on the things that move the scoreboard: the 7s,
+        especially the 7 of Coins; the Coins suit as a whole; and any face cards that affect the
+        Primiera count at the end of the round. Once you know three of the four 7s are already
+        captured, the remaining one becomes precious. If most of the Coins have been taken, the
+        fight for that category is already decided — and you can stop worrying about it and
+        focus elsewhere.
+      </p>
+
+      <p>
+        This is how card tracking actually develops — not by memorising everything at once, but
+        by keeping a rough running count on the cards that change the outcome. Start with just
+        the Settebello and the Coins suit, and build from there as the habit becomes natural.
       </p>
 
       <h2>Protect the Settebello</h2>
+
       <p>
-        The 7 of Coins (Settebello) scores a point on its own — no category needed, no
-        comparison required. That makes it the most individually valuable card in the game.
-        When it appears on the table, don't leave it sitting there unless you genuinely
-        have no way to take it.
-      </p>
-      <p>
-        But protecting the Settebello isn't only about capturing it. It's also about not
-        setting up a situation where your opponent captures it easily. If the Settebello is
-        on the table and you play a card that doesn't take it, make sure you're not also
-        giving your opponent the exact card they need to grab it next turn. For the full
-        scoring picture, review the{' '}
-        <Link to="/scopa-rules">Scopa Rules</Link>.
+        The 7 of Coins — the Settebello — scores a point by itself, independent of every other
+        category. No comparison, no tie possible. Whoever captures it, scores it. That makes it
+        the single most individually valuable card in the game.
       </p>
 
-      <h2>Plan Future Captures</h2>
       <p>
-        Think two or three moves ahead, not just one. If you play a 3 onto the table now
-        and your opponent has nothing to match it, you might be setting up a future capture
-        with your own 3 from another round — or using the 3 as bait for a combination you
-        control.
-      </p>
-      <p>
-        Scopa traps work the same way. If you can arrange the table so that no matter what
-        your opponent plays, you get to clear it, that's a free Scopa point. These setups
-        take practice to spot, but you'll start to recognize them once you're thinking a
-        move ahead. Don't just react to the table — try to shape it.
+        When the Settebello is face-up on the table, your priority shifts. If you can take it,
+        take it — even if it means passing up a larger-looking capture elsewhere. If you can't
+        take it, think carefully about what you play next. Don't hand your opponent the card
+        they need to sweep it on their next turn.
       </p>
 
-      <h2>Learn Opponent Habits</h2>
       <p>
-        People fall into patterns. Some players always grab the highest-value card
-        available. Others avoid placing cards on the table and take any capture they can
-        find, even a bad one. Some chase Scopas aggressively even when it costs them
-        Coins.
-      </p>
-      <p>
-        Once you notice a tendency, you can use it. If your opponent always grabs the
-        Coins cards first, you can use that predictability to control which cards they take
-        — and which ones they leave for you. Against the computer, the same applies: learn
-        the patterns, then exploit them.
+        Timing matters too. The Settebello sometimes appears late in a hand, when the table is
+        thin and your options are limited. Being in a position to capture it — by holding the
+        right combination or by not having burned your 7s early — is worth thinking about well
+        before it shows up. For the full scoring picture, check the{' '}
+        <Link to="/scopa-rules">full Scopa rules</Link>.
       </p>
 
-      <h2>Beginner Mistakes</h2>
+      <h2>Think One Move Ahead</h2>
+
+      <p>
+        Most beginners play the card they need to play right now. Better Scopa players play the
+        card they want to be holding on their next turn.
+      </p>
+
+      <p>
+        Baiting is one of the more satisfying tools available. You place a card on the table not
+        because you're forced to, but because you want it there — knowing you hold another card
+        that will take it back, clearing the table in the process and scoring a Scopa. A
+        well-timed bait earns a bonus point and often leaves your opponent with nothing
+        useful to respond to.
+      </p>
+
+      <p>
+        Forcing bad plays works on the same logic. If you can arrange the table so that whatever
+        your opponent places only makes things worse for them, you've won the exchange before they
+        even play. Leave totals on the table that are awkward to match. Make the position
+        uncomfortable. The card your opponent is forced to lay down may be exactly what you
+        needed anyway.
+      </p>
+
+      <h2>Avoid Giving Away Scopas</h2>
+
+      <p>
+        A Scopa is worth a point every time it happens. Conceding one feels small in the moment,
+        but in a close game it's often the margin. Most Scopas that beginners give away come from
+        the same two or three habits.
+      </p>
+
+      <p>
+        The most common: playing a capture that clears the table for your opponent. It happens
+        when you're focused on what you're gaining — two cards, maybe a Coins card — and you
+        don't notice you've left an empty table behind. Your opponent plays the next card,
+        takes nothing because there's nothing to take, and the table stays empty. Then they
+        clear it on the turn after that. That's a Scopa you handed over.
+      </p>
+
+      <p>
+        The second habit: placing high-value cards as throwaways when you can't capture. A King,
+        a 7, a high Coins card sitting exposed on the table is an invitation. When you have to
+        place rather than capture, think carefully about which card does the least damage. Low
+        cards with awkward values are usually the safer throwaway.
+      </p>
+
+      <h2>Learn the Rhythm of the Game</h2>
+
+      <p>
+        Scopa has a pace to it. Not the frantic pace of a fast trick-taking game — more like a
+        slow conversation where every card placed carries a little more weight than it seems.
+        In the bars and cafés across Italy where this game has been played for generations,
+        you'll often see experienced players sit quietly for a moment before they act. Not
+        because the rules require it. Because reading the table takes a second.
+      </p>
+
+      <p>
+        Patience is a real strategic asset in Scopa. The temptation, especially early in a
+        round, is to grab everything available and build a lead. But the player who waits,
+        watches the position develop, and holds their best cards for the right moment tends to
+        finish stronger. The endgame — the last two or three hands when the deck is nearly gone
+        — is where most Scopa rounds are actually decided.
+      </p>
+
+      <p>
+        If you want to develop this instinct, the best way is repetition.{' '}
+        <Link to="/play-scopa-online">Playing Scopa online</Link> against the computer gives
+        you a way to try different approaches without the stakes of a live game. Pay attention
+        to the positions that cost you, and you'll start to recognise them before they happen.
+      </p>
+
+      <h2>Beginner Strategy Tips</h2>
+
       <ul>
         <li>
-          <strong>Capturing immediately without checking the table.</strong> Always pause
-          before grabbing a card. Ask what you're leaving and whether it helps your
-          opponent.
+          <strong>Track the 7s.</strong> Know how many have been played. The Settebello is the
+          most valuable single card in the game — always know where you stand with it.
         </li>
         <li>
-          <strong>Ignoring the Settebello.</strong> Newer players sometimes overlook the 7
-          of Coins because they're focused on counting cards. It's worth a point by itself
-          — never ignore it.
+          <strong>Avoid unnecessary captures.</strong> Just because you can take a card doesn't
+          mean you should. Always check what you're leaving before you commit to a capture.
         </li>
         <li>
-          <strong>Chasing Scopas at the wrong moment.</strong> A Scopa earns a bonus
-          point, but not if it costs you control of the Coins or lets your opponent dominate
-          the endgame. Pick your moments.
+          <strong>Watch the Coins suit carefully.</strong> Coins count in two scoring categories
+          — most Coins and the Settebello. Every Coins card is worth more than a card from any
+          other suit.
         </li>
         <li>
-          <strong>Placing powerful cards for no reason.</strong> When you can't capture,
-          think carefully about which card you put on the table. Placing a high Coins card
-          is often a costly mistake.
+          <strong>Don't rush.</strong> The endgame is where Scopa rounds are won and lost.
+          Playing too quickly early on can cost you the control you need in the final hands.
         </li>
         <li>
-          <strong>Forgetting what's been played.</strong> Even rough card tracking is much
-          better than none. Start with just watching the Coins suit and the 7s — it will
-          immediately sharpen your decisions.
+          <strong>Think about your next turn.</strong> Before you play, consider what the table
+          will look like after your move — and what your opponent is likely to do with it.
         </li>
       </ul>
 
+      <h2>Practice Scopa Online</h2>
+
       <p>
-        If you want to review the basics before going deeper,{' '}
-        <Link to="/how-to-play-scopa">How to Play Scopa</Link> covers everything from
-        setup through scoring in plain language.
+        Scopa strategy develops through repetition, not reading. Reading the table, tracking
+        cards, recognising when to hold back — these things click after you've seen the same
+        situations enough times to start anticipating them. The fastest way to improve is to
+        play regularly and pay attention to what's costing you points.
       </p>
 
-      <h2>Practice Your Strategy</h2>
       <p>
-        The best way to improve at Scopa is to play regularly and learn to read the table
-        over time. Strategy clicks when you've seen a situation enough times to recognise
-        it — and the only way to get there is reps.
+        You can play a <Link to="/play-scopa-online">free online Scopa game</Link> directly on
+        this site — no download, no signup needed. It uses a traditional Italian 40-card deck
+        and runs entirely in your browser. It's a good place to test the approaches on this
+        page and see which ones hold up in practice.
       </p>
+
       <p>
         <Link to="/play-scopa-online" className="game-card__btn">
           Play Scopa Online →
         </Link>
       </p>
 
-      <p style={{ marginTop: '2rem' }}>
+      <h2>More Italian Card Games</h2>
+
+      <p>If you enjoy Scopa, here are the other games and guides on this site:</p>
+
+      <ul>
+        <li>
+          <strong><Link to="/play-scopa-online">Play Scopa Online</Link></strong> — free
+          browser version using a traditional Italian deck, no download required.
+        </li>
+        <li>
+          <strong><Link to="/how-to-play-scopa">How to Play Scopa</Link></strong> — a clear
+          beginner's guide covering setup, capturing, and scoring from the beginning.
+        </li>
+        <li>
+          <strong><Link to="/scopa-rules">Scopa Rules</Link></strong> — the complete ruleset
+          including Primiera scoring, regional variations, and edge cases.
+        </li>
+        <li>
+          <strong><Link to="/how-to-play-briscola">How to Play Briscola</Link></strong> —
+          Italy's most popular trick-taking card game, also played with the 40-card deck.
+        </li>
+        <li>
+          <strong><Link to="/italian-solitaire">Italian Solitaire</Link></strong> — traditional
+          Italian solitaire games played with the same regional deck.
+        </li>
+      </ul>
+
+      <p>
         <Link to="/">← Back to Italian Card Games</Link>
       </p>
 
