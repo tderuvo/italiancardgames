@@ -48,7 +48,10 @@ export default function BriscolaPage() {
           Press "New Game" to start, or scroll down to learn the rules.
         </p>
         <p style={{ textAlign: 'center', fontSize: '0.85rem', color: '#aaa', marginTop: '0.5rem' }}>
-          Want a deeper dive? <Link to="/how-to-play-briscola">Read the full Briscola guide →</Link>
+          Want to improve? <Link to="/briscola-strategy">Read the Briscola strategy guide →</Link>
+        </p>
+        <p style={{ textAlign: 'center', fontSize: '0.85rem', color: '#aaa', marginTop: '0.5rem' }}>
+          New to the game? <Link to="/how-to-play-briscola">Learn the rules →</Link>
         </p>
         <p style={{ textAlign: 'center', fontSize: '0.85rem', color: '#aaa', marginTop: '0.5rem' }}>
           Also enjoy: <Link to="/play-scopa-online">Play Scopa Online →</Link>

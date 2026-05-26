@@ -118,9 +118,17 @@ export default function HowToPlayBriscolaPage() {
       </ul>
 
       <p>
-        An online version of Briscola may be added in the future. In the meantime, you
-        can try <Link to="/play-scopa-online">playing Scopa</Link> — another classic from
-        the same Italian card game tradition.
+        Ready to play?{' '}
+        <Link to="/play-briscola-online">Play Briscola online for free</Link> — no download
+        or signup needed, runs in your browser using a traditional 40-card Italian deck.
+      </p>
+
+      <p>
+        Want to go deeper?{' '}
+        <Link to="/briscola-strategy">Read the Briscola strategy guide</Link> for tips on
+        trump management, card tracking, and endgame tactics. Or try{' '}
+        <Link to="/play-scopa-online">playing Scopa</Link> — another classic from the same
+        Italian card game tradition.
       </p>
 
       <p>

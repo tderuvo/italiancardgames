@@ -13,6 +13,7 @@ import TermsPage from './pages/TermsPage';
 import ContactPage from './pages/ContactPage';
 import ContactSuccessPage from './pages/ContactSuccessPage';
 import ScopaStrategyPage from './pages/ScopaStrategyPage';
+import BriscolaStrategyPage from './pages/BriscolaStrategyPage';
 
 // ── Route map ────────────────────────────────────────────────────────────────
 // Games live at /play-{game}-online; learning guides at /how-to-play-{game}.
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/how-to-play-briscola"    element={<HowToPlayBriscolaPage />} />
           <Route path="/scopa-rules"             element={<ScopaRulesPage />} />
           <Route path="/scopa-strategy"          element={<ScopaStrategyPage />} />
+          <Route path="/briscola-strategy"       element={<BriscolaStrategyPage />} />
           <Route path="/italian-solitaire"       element={<ItalianSolitairePage />} />
           <Route path="/rules"                   element={<RulesPage />} />
           <Route path="/privacy-policy"          element={<PrivacyPolicyPage />} />
