@@ -2,13 +2,27 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 // ── Future games: add a new card object here when ready ──────────────────────
-const GAMES = [
+interface Game {
+  title: string;
+  description: string;
+  href: string;
+  btnLabel: string;
+  available: boolean;
+  comingSoon?: boolean;   // page exists but game not yet playable
+  learnLink?: string;
+  learnLabel?: string;
+  emoji: string;
+}
+
+const GAMES: Game[] = [
   {
     title: 'Scopa',
     description: 'The classic Italian capture card game. Play against the computer using a traditional 40-card deck.',
     href: '/play-scopa-online',
     btnLabel: 'Play Scopa →',
     available: true,
+    learnLink: '/how-to-play-scopa',
+    learnLabel: 'New? Learn the rules →',
     emoji: '♦',
   },
   {
@@ -17,6 +31,8 @@ const GAMES = [
     href: '/play-briscola-online',
     btnLabel: 'Play Briscola →',
     available: true,
+    learnLink: '/how-to-play-briscola',
+    learnLabel: 'New? Learn the rules →',
     emoji: '♣',
   },
   {
@@ -26,6 +42,15 @@ const GAMES = [
     btnLabel: 'Explore Games →',
     available: true,
     emoji: '♠',
+  },
+  {
+    title: 'Tressette',
+    description: "Italy's classic 4-player partnership trick-taking game. Strategic, social, and steeped in Italian card tradition.",
+    href: '/play-tressette-online',
+    btnLabel: 'Learn About Tressette →',
+    available: true,
+    comingSoon: true,
+    emoji: '♥',
   },
 ];
 
@@ -54,23 +79,23 @@ export default function HomePage() {
       {/* ── Game cards ── */}
       <section className="games-grid" aria-label="Available games">
         {GAMES.map(game => (
-          <article key={game.title} className={`game-card ${game.available ? '' : 'game-card--soon'}`}>
+          <article key={game.title} className={`game-card ${game.comingSoon ? 'game-card--soon' : ''}`}>
             <div className="game-card__emoji" aria-hidden="true">{game.emoji}</div>
-            <h2 className="game-card__title">{game.title}</h2>
+            <h2 className="game-card__title">
+              {game.title}
+              {game.comingSoon && (
+                <span className="game-card__soon-badge">Coming Soon</span>
+              )}
+            </h2>
             <p className="game-card__desc">{game.description}</p>
             {game.available && game.href ? (
               <>
                 <Link to={game.href} className="game-card__btn">
                   {game.btnLabel}
                 </Link>
-                {game.title === 'Scopa' && (
+                {game.learnLink && game.learnLabel && (
                   <p style={{ margin: '0.5rem 0 0', fontSize: '0.8rem', color: '#aaa' }}>
-                    <Link to="/how-to-play-scopa">New? Learn the rules →</Link>
-                  </p>
-                )}
-                {game.title === 'Briscola' && (
-                  <p style={{ margin: '0.5rem 0 0', fontSize: '0.8rem', color: '#aaa' }}>
-                    <Link to="/how-to-play-briscola">New? Learn the rules →</Link>
+                    <Link to={game.learnLink}>{game.learnLabel}</Link>
                   </p>
                 )}
               </>

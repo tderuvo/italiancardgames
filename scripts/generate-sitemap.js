@@ -13,6 +13,7 @@ const ROUTES = [
   '/how-to-play-scopa',
   '/how-to-play-briscola',
   '/briscola-strategy',
+  '/play-tressette-online',
   '/scopa-rules',
   '/scopa-strategy',
   '/italian-solitaire',

@@ -34,6 +34,14 @@ export default function Header() {
             Italian Solitaire
           </NavLink>
           <NavLink
+            to="/play-tressette-online"
+            className={({ isActive }) =>
+              isActive ? 'nav-link nav-link--active nav-link--soon' : 'nav-link nav-link--soon'
+            }
+          >
+            Tressette <em>soon</em>
+          </NavLink>
+          <NavLink
             to="/rules"
             className={({ isActive }) =>
               isActive ? 'nav-link nav-link--active' : 'nav-link'
