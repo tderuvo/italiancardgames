@@ -13,9 +13,9 @@ const GAMES = [
   },
   {
     title: 'Briscola',
-    description: "Italy's most popular trick-taking card game. Learn how to play.",
-    href: '/how-to-play-briscola',
-    btnLabel: 'Learn Briscola →',
+    description: "Italy's most popular trick-taking card game. Play online for free using a traditional 40-card Italian deck.",
+    href: '/play-briscola-online',
+    btnLabel: 'Play Briscola →',
     available: true,
     emoji: '♣',
   },
@@ -66,6 +66,11 @@ export default function HomePage() {
                 {game.title === 'Scopa' && (
                   <p style={{ margin: '0.5rem 0 0', fontSize: '0.8rem', color: '#aaa' }}>
                     <Link to="/how-to-play-scopa">New? Learn the rules →</Link>
+                  </p>
+                )}
+                {game.title === 'Briscola' && (
+                  <p style={{ margin: '0.5rem 0 0', fontSize: '0.8rem', color: '#aaa' }}>
+                    <Link to="/how-to-play-briscola">New? Learn the rules →</Link>
                   </p>
                 )}
               </>

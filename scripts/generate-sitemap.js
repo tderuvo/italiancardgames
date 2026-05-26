@@ -9,10 +9,11 @@ const BASE_URL = 'https://italiancardgames.com';
 const ROUTES = [
   '/',
   '/play-scopa-online',
+  '/play-briscola-online',
   '/how-to-play-scopa',
+  '/how-to-play-briscola',
   '/scopa-rules',
   '/scopa-strategy',
-  '/how-to-play-briscola',
   '/italian-solitaire',
   '/rules',
   '/privacy-policy',

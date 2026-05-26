@@ -18,7 +18,7 @@ export default function Header() {
             Play Scopa
           </NavLink>
           <NavLink
-            to="/how-to-play-briscola"
+            to="/play-briscola-online"
             className={({ isActive }) =>
               isActive ? 'nav-link nav-link--active' : 'nav-link'
             }

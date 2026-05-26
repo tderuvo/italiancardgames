@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
 import ScopaPage from './pages/ScopaPage';
+import BriscolaPage from './pages/BriscolaPage';
 import HowToPlayScopaPage from './pages/HowToPlayScopaPage';
 import HowToPlayBriscolaPage from './pages/HowToPlayBriscolaPage';
 import ScopaRulesPage from './pages/ScopaRulesPage';
@@ -14,9 +15,8 @@ import ContactSuccessPage from './pages/ContactSuccessPage';
 import ScopaStrategyPage from './pages/ScopaStrategyPage';
 
 // ── Route map ────────────────────────────────────────────────────────────────
-// To add Briscola: import BriscolaPage and add a Route below.
-// To add Solitaire: same pattern.
-// Keep URLs descriptive for SEO (/play-briscola-online, /italian-solitaire, etc.)
+// Games live at /play-{game}-online; learning guides at /how-to-play-{game}.
+// Keep URLs descriptive for SEO.
 
 export default function App() {
   return (
@@ -24,17 +24,18 @@ export default function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/play-scopa-online"   element={<ScopaPage />} />
-          <Route path="/how-to-play-scopa"    element={<HowToPlayScopaPage />} />
-          <Route path="/how-to-play-briscola" element={<HowToPlayBriscolaPage />} />
-          <Route path="/scopa-rules"          element={<ScopaRulesPage />} />
-          <Route path="/scopa-strategy"       element={<ScopaStrategyPage />} />
-          <Route path="/italian-solitaire"    element={<ItalianSolitairePage />} />
-          <Route path="/rules"                element={<RulesPage />} />
-          <Route path="/privacy-policy"       element={<PrivacyPolicyPage />} />
-          <Route path="/terms"                element={<TermsPage />} />
-          <Route path="/contact"              element={<ContactPage />} />
-          <Route path="/contact-success"      element={<ContactSuccessPage />} />
+          <Route path="/play-scopa-online"      element={<ScopaPage />} />
+          <Route path="/play-briscola-online"   element={<BriscolaPage />} />
+          <Route path="/how-to-play-scopa"       element={<HowToPlayScopaPage />} />
+          <Route path="/how-to-play-briscola"    element={<HowToPlayBriscolaPage />} />
+          <Route path="/scopa-rules"             element={<ScopaRulesPage />} />
+          <Route path="/scopa-strategy"          element={<ScopaStrategyPage />} />
+          <Route path="/italian-solitaire"       element={<ItalianSolitairePage />} />
+          <Route path="/rules"                   element={<RulesPage />} />
+          <Route path="/privacy-policy"          element={<PrivacyPolicyPage />} />
+          <Route path="/terms"                   element={<TermsPage />} />
+          <Route path="/contact"                 element={<ContactPage />} />
+          <Route path="/contact-success"         element={<ContactSuccessPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
