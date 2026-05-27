@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ScopaTutorialVideo from '../components/ScopaTutorialVideo';
 
 export default function HowToPlayScopaPage() {
   useEffect(() => {
@@ -113,6 +114,8 @@ export default function HowToPlayScopaPage() {
       <p>
         <Link to="/play-scopa-online">Play Scopa Online →</Link>
       </p>
+
+      <ScopaTutorialVideo />
 
       <h2>Next Step</h2>
       <p>

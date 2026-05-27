@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ScopaTutorialVideo from '../components/ScopaTutorialVideo';
 
 export default function ScopaRulesPage() {
   useEffect(() => {
@@ -168,6 +169,8 @@ export default function ScopaRulesPage() {
           are combined for scoring.
         </li>
       </ul>
+
+      <ScopaTutorialVideo />
 
       <p>
         Once you understand the rules, explore our{' '}

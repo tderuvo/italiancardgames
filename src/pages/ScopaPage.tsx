@@ -37,6 +37,16 @@ export default function ScopaPage() {
         <p style={{ textAlign: 'center', fontSize: '0.85rem', color: '#aaa', marginTop: '0.5rem' }}>
           Want to improve? <Link to="/scopa-strategy">Read our Scopa Strategy Guide →</Link>
         </p>
+        <p style={{ textAlign: 'center', fontSize: '0.85rem', color: '#aaa', marginTop: '0.5rem' }}>
+          Need help learning?{' '}
+          <a
+            href="https://www.youtube.com/watch?v=TuPZ3zsHmIo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Watch a quick Scopa tutorial →
+          </a>
+        </p>
       </section>
 
       {/* ── Intro paragraph — moved below game ── */}
