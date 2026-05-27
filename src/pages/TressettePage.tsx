@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import TressetteTutorialVideo from '../components/TressetteTutorialVideo';
 
 export default function TressettePage() {
   const [notified, setNotified] = useState(false);
@@ -219,6 +220,8 @@ export default function TressettePage() {
         consequential, is where strategic patience pays off most clearly.
       </p>
 
+      <TressetteTutorialVideo />
+
       <h2>Tressette vs Briscola</h2>
 
       <p>
@@ -287,6 +290,17 @@ export default function TressettePage() {
         A playable browser version of Tressette is coming to Italian Card Games. It will
         use a traditional 40-card deck, run in your browser without any download or signup,
         and follow the standard Tressette rules described on this page.
+      </p>
+
+      <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
+        Want to learn before the playable version launches?{' '}
+        <a
+          href="https://www.youtube.com/watch?v=73t4yReh4TM"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Watch a quick tutorial →
+        </a>
       </p>
 
       {notified ? (
