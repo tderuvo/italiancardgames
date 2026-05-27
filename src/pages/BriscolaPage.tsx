@@ -56,6 +56,16 @@ export default function BriscolaPage() {
         <p style={{ textAlign: 'center', fontSize: '0.85rem', color: '#aaa', marginTop: '0.5rem' }}>
           Also enjoy: <Link to="/play-scopa-online">Play Scopa Online →</Link>
         </p>
+        <p style={{ textAlign: 'center', fontSize: '0.85rem', color: '#aaa', marginTop: '0.5rem' }}>
+          Need help learning?{' '}
+          <a
+            href="https://www.youtube.com/watch?v=lEk_8GlwjzA"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Watch a quick Briscola tutorial →
+          </a>
+        </p>
       </section>
 
       {/* ── Intro paragraph ── */}

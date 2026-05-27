@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import BriscolaTutorialVideo from '../components/BriscolaTutorialVideo';
 
 export default function BriscolaStrategyPage() {
   useEffect(() => {
@@ -261,6 +262,8 @@ export default function BriscolaStrategyPage() {
           block a comeback is often more valuable than extending your lead.
         </li>
       </ul>
+
+      <BriscolaTutorialVideo />
 
       <h2>Practice Briscola Online</h2>
 

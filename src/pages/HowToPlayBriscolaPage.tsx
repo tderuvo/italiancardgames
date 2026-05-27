@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import BriscolaTutorialVideo from '../components/BriscolaTutorialVideo';
 
 export default function HowToPlayBriscolaPage() {
   useEffect(() => {
@@ -116,6 +117,8 @@ export default function HowToPlayBriscolaPage() {
           left. The endgame is where memory and planning matter most.
         </li>
       </ul>
+
+      <BriscolaTutorialVideo />
 
       <p>
         Ready to play?{' '}
