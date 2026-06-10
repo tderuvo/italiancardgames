@@ -318,6 +318,24 @@ export default function TressetteRulesPage() {
 
       <TressetteTutorialVideo />
 
+      <h2>Improve Your Tressette Strategy</h2>
+
+      <p>
+        Once you understand the rules, the next step is learning how experienced players
+        track cards, work with their partner, and plan several tricks ahead. Knowing the
+        ranking and the scoring structure is only the foundation — the players who win
+        consistently are the ones who build a mental picture of the remaining deck as the
+        round progresses, coordinate with their partner through careful leads, and time
+        their most powerful cards for the moments where they create the greatest advantage.
+      </p>
+
+      <p>
+        The <Link to="/tressette-strategy">Tressette strategy guide</Link> covers all of
+        this in depth: card tracking, partnership signals, how to avoid wasting your
+        Threes and Twos, and how to think several tricks ahead rather than one at a time.
+        It is the natural next read after this page.
+      </p>
+
       <h2>Ready to Practice?</h2>
 
       <p>
