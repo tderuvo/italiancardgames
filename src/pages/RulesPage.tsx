@@ -20,6 +20,12 @@ const RULES = [
       'Learn the basics of Briscola — trump cards, card values, the Ace and 3, scoring, and how to approach the endgame.',
     href: '/how-to-play-briscola',
   },
+  {
+    title: 'Tressette Rules',
+    description:
+      'Complete beginner guide to Tressette — card rankings (3 is highest, not the Ace), dealing, trick resolution, scoring, common terms, and partnership basics.',
+    href: '/tressette-rules',
+  },
 ] as const;
 
 export default function RulesPage() {
