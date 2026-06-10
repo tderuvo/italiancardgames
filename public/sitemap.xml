@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
   <url>
     <loc>https://italiancardgames.com/</loc>
     <lastmod>2026-05-27</lastmod>
   </url>
+
+  <!-- Playable games -->
   <url>
     <loc>https://italiancardgames.com/play-scopa-online</loc>
     <lastmod>2026-05-27</lastmod>
@@ -13,19 +17,17 @@
     <lastmod>2026-05-27</lastmod>
   </url>
   <url>
-    <loc>https://italiancardgames.com/how-to-play-scopa</loc>
-    <lastmod>2026-05-27</lastmod>
-  </url>
-  <url>
-    <loc>https://italiancardgames.com/how-to-play-briscola</loc>
-    <lastmod>2026-05-27</lastmod>
-  </url>
-  <url>
-    <loc>https://italiancardgames.com/briscola-strategy</loc>
-    <lastmod>2026-05-27</lastmod>
-  </url>
-  <url>
     <loc>https://italiancardgames.com/play-tressette-online</loc>
+    <lastmod>2026-05-27</lastmod>
+  </url>
+
+  <!-- Rules and how-to guides -->
+  <url>
+    <loc>https://italiancardgames.com/rules</loc>
+    <lastmod>2026-06-10</lastmod>
+  </url>
+  <url>
+    <loc>https://italiancardgames.com/how-to-play-scopa</loc>
     <lastmod>2026-05-27</lastmod>
   </url>
   <url>
@@ -33,15 +35,35 @@
     <lastmod>2026-05-27</lastmod>
   </url>
   <url>
+    <loc>https://italiancardgames.com/how-to-play-briscola</loc>
+    <lastmod>2026-05-27</lastmod>
+  </url>
+  <url>
+    <loc>https://italiancardgames.com/tressette-rules</loc>
+    <lastmod>2026-06-10</lastmod>
+  </url>
+
+  <!-- Strategy guides -->
+  <url>
     <loc>https://italiancardgames.com/scopa-strategy</loc>
     <lastmod>2026-05-27</lastmod>
   </url>
+  <url>
+    <loc>https://italiancardgames.com/briscola-strategy</loc>
+    <lastmod>2026-05-27</lastmod>
+  </url>
+  <url>
+    <loc>https://italiancardgames.com/tressette-strategy</loc>
+    <lastmod>2026-06-10</lastmod>
+  </url>
+
+  <!-- Other -->
   <url>
     <loc>https://italiancardgames.com/italian-solitaire</loc>
     <lastmod>2026-05-27</lastmod>
   </url>
   <url>
-    <loc>https://italiancardgames.com/rules</loc>
+    <loc>https://italiancardgames.com/contact</loc>
     <lastmod>2026-05-27</lastmod>
   </url>
   <url>
@@ -52,16 +74,5 @@
     <loc>https://italiancardgames.com/terms</loc>
     <lastmod>2026-05-27</lastmod>
   </url>
-  <url>
-    <loc>https://italiancardgames.com/contact</loc>
-    <lastmod>2026-05-27</lastmod>
-  </url>
-  <url>
-    <loc>https://italiancardgames.com/tressette-rules</loc>
-    <lastmod>2026-06-10</lastmod>
-  </url>
-  <url>
-    <loc>https://italiancardgames.com/tressette-strategy</loc>
-    <lastmod>2026-06-10</lastmod>
-  </url>
+
 </urlset>
