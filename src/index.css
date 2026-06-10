@@ -226,6 +226,39 @@ img, svg { display: block; max-width: 100%; }
 .seo-section li { margin-bottom: 0.4rem; color: var(--text-muted); font-size: 0.95rem; }
 .seo-section strong { color: var(--text); }
 
+/* ── Rules table (used in TressetteRulesPage and similar SEO pages) ─────── */
+.rules-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0 1.5rem;
+  font-size: 0.93rem;
+}
+.rules-table th,
+.rules-table td {
+  text-align: left;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+.rules-table thead th {
+  background: var(--green-light);
+  color: var(--green-dark);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+.rules-table tbody tr:nth-child(even) {
+  background: #f7f5f1;
+}
+.rules-table td strong {
+  color: var(--text);
+}
+@media (max-width: 540px) {
+  .rules-table { font-size: 0.82rem; }
+  .rules-table th,
+  .rules-table td { padding: 0.4rem 0.5rem; }
+}
+
 /* ── Scopa page ──────────────────────────────────────────────────────────── */
 .page-scopa__hero {
   padding: 1.75rem 0 0.6rem;
