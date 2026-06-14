@@ -111,36 +111,51 @@ export default function ItalianCardDecksByRegionPage() {
 
       <figure className="deck-figure">
         <img
-          src="/images/sicilian-deck.png"
+          src="/images/siciliane-deck.png"
           alt="Traditional Sicilian Italian playing cards"
           className="deck-figure__img"
         />
         <figcaption className="deck-figure__caption">
-          Traditional Sicilian playing cards, commonly used for Scopa and Briscola.
+          Traditional Sicilian playing cards used throughout Sicily.
         </figcaption>
+        <p className="deck-figure__credit">
+          Image reference:{' '}
+          <a
+            href="https://www.wopc.co.uk/italy/sicilian-pattern"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            World of Playing Cards — Sicilian Pattern
+          </a>
+        </p>
       </figure>
 
       <p>
+        The Sicilian pattern is one of Italy's oldest and most distinctive regional card
+        designs, used throughout Sicily for generations. Like all Italian regional decks
+        it is built on the traditional four suits — Coins, Cups, Swords, and Batons —
+        but the artwork and iconography differ noticeably from other Italian patterns
+        such as the Neapolitan, Piacentine, and Trevisane designs. The visual character
+        of Sicilian cards is unmistakably its own.
+      </p>
+
+      <p>
         Sicily's card tradition reflects the island's complex history as a crossroads of
-        Mediterranean civilisations. Sicilian cards carry the visual weight of that
-        history — bold outlines, deep saturated colours, and figures that draw on centuries
-        of Spanish artistic influence. Sicily was under Aragonese and then Spanish rule
-        from the thirteenth to the eighteenth century, and that influence shaped the local
-        card tradition in ways that are still visible today.
+        Mediterranean civilisations. The deck carries the influence of centuries of
+        Aragonese and Spanish rule — bold outlines, deep saturated colours, and court
+        card figures shaped by Spanish artistic conventions that entered the island's
+        printing tradition and were preserved long after political ties with Spain ended.
+        Many modern Sicilian decks continue to reproduce design elements that can be
+        traced back centuries, making them as much a piece of cultural heritage as a
+        practical playing card.
       </p>
 
       <p>
-        The Trinacria — the ancient three-legged symbol of Sicily — appears in regional
-        imagery associated with the island's identity, and that same spirit of strong
-        regional pride runs through Sicilian playing cards. To a Sicilian player, the
-        local deck is not just a functional object; it carries a sense of place and
-        belonging that a generic deck does not.
-      </p>
-
-      <p>
-        Scopa and Briscola are the most commonly played games with Sicilian cards, and
-        both are available to play on this site. The rules are identical to the standard
-        versions — only the visual style of the deck differs.
+        The pattern remains an important part of Sicilian cultural identity and family
+        card-playing traditions. For a Sicilian player, the local deck is not simply
+        a functional object — it carries a sense of place and belonging that a generic
+        or mainland deck cannot replicate. Scopa, Briscola, and a range of local
+        regional games are commonly played with Sicilian cards throughout the island.
       </p>
 
       <p>
