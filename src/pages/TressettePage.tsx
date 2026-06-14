@@ -29,7 +29,20 @@ export default function TressettePage() {
   return (
     <div className="seo-section">
 
-      <h1>Play Tressette Online – Traditional Italian Card Game</h1>
+      <h1>Play Tressette Online</h1>
+
+      <p>Play a simplified version of Tressette online using a traditional 40-card Italian deck.</p>
+
+      {/* ── Playable game ── */}
+      <TressetteGame />
+
+      {/* ── Helper links ── */}
+      <p style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', margin: '1rem 0 1.5rem', fontSize: '0.9rem' }}>
+        <Link to="/tressette-rules">Tressette Rules →</Link>
+        <Link to="/tressette-strategy">Tressette Strategy →</Link>
+        <Link to="/play-scopa-online">Play Scopa →</Link>
+        <Link to="/play-briscola-online">Play Briscola →</Link>
+      </p>
 
       <p>
         Tressette is one of Italy's oldest and most respected card games — a classic
@@ -49,17 +62,13 @@ export default function TressettePage() {
       </p>
 
       <p>
-        Tressette is now playable on Italian Card Games — free in your browser, no download
-        or signup required. This page also covers how the game works, its cultural
-        significance, and what makes it one of the most strategically rewarding card games
-        in the Italian tradition. If you enjoy Tressette, try{' '}
-        <Link to="/play-briscola-online">Briscola</Link> or{' '}
+        Tressette is free in your browser — no download or signup required. This page also
+        covers how the game works, its cultural significance, and what makes it one of the
+        most strategically rewarding card games in the Italian tradition. If you enjoy
+        Tressette, try <Link to="/play-briscola-online">Briscola</Link> or{' '}
         <Link to="/play-scopa-online">Scopa</Link> — both use the same 40-card deck and
         are free alongside Tressette.
       </p>
-
-      {/* ── Playable game ── */}
-      <TressetteGame />
 
       <h2>What is Tressette?</h2>
 
