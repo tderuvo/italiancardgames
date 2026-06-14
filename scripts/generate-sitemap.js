@@ -20,6 +20,7 @@ const ROUTES = [
   '/briscola-strategy',
   '/tressette-strategy',
   '/italian-solitaire',
+  '/italian-card-decks-by-region',
   '/contact',
   '/privacy-policy',
   '/terms',

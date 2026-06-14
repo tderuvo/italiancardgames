@@ -775,6 +775,37 @@ img, svg { display: block; max-width: 100%; }
   .bg-trump-deck-row    { gap: 0.9rem; }
 }
 
+/* ── Italian Card Culture pages ──────────────────────────────────────────── */
+
+.deck-page__subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+/* Placeholder shown where regional deck images will eventually live */
+.deck-placeholder {
+  background: var(--warm-bg);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  color: var(--text-muted);
+  margin: 1rem 0 1.25rem;
+}
+.deck-placeholder span {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.35rem;
+  opacity: 0.5;
+}
+.deck-placeholder p {
+  margin: 0;
+  font-size: 0.82rem;
+  font-style: italic;
+}
+
 /* ── Tressette game (.tg prefix) ─────────────────────────────────────────── */
 
 /* Illegal cards (can't be played because suit-following is required) */

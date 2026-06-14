@@ -17,6 +17,7 @@ import BriscolaStrategyPage from './pages/BriscolaStrategyPage';
 import TressettePage from './pages/TressettePage';
 import TressetteRulesPage from './pages/TressetteRulesPage';
 import TressetteStrategyPage from './pages/TressetteStrategyPage';
+import ItalianCardDecksByRegionPage from './pages/ItalianCardDecksByRegionPage';
 
 // ── Route map ────────────────────────────────────────────────────────────────
 // Games live at /play-{game}-online; learning guides at /how-to-play-{game}.
@@ -38,7 +39,8 @@ export default function App() {
           <Route path="/play-tressette-online"   element={<TressettePage />} />
           <Route path="/tressette-rules"         element={<TressetteRulesPage />} />
           <Route path="/tressette-strategy"      element={<TressetteStrategyPage />} />
-          <Route path="/italian-solitaire"       element={<ItalianSolitairePage />} />
+          <Route path="/italian-solitaire"             element={<ItalianSolitairePage />} />
+          <Route path="/italian-card-decks-by-region" element={<ItalianCardDecksByRegionPage />} />
           <Route path="/rules"                   element={<RulesPage />} />
           <Route path="/privacy-policy"          element={<PrivacyPolicyPage />} />
           <Route path="/terms"                   element={<TermsPage />} />

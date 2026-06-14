@@ -49,6 +49,14 @@ export default function Header() {
           >
             Rules
           </NavLink>
+          <NavLink
+            to="/italian-card-decks-by-region"
+            className={({ isActive }) =>
+              isActive ? 'nav-link nav-link--active' : 'nav-link'
+            }
+          >
+            Card Culture
+          </NavLink>
         </nav>
       </div>
     </header>
