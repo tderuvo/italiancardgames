@@ -207,31 +207,43 @@ export default function ItalianCardDecksByRegionPage() {
           className="deck-figure__img"
         />
         <figcaption className="deck-figure__caption">
-          Traditional Piacentine playing cards from Emilia-Romagna — widely used across northern and central Italy.
+          Piacentine pattern playing cards from the Piacenza region.
         </figcaption>
+        <p className="deck-figure__credit">
+          Image reference:{' '}
+          <a
+            href="https://www.wopc.co.uk/italy/piacentine-pattern"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            World of Playing Cards — Piacentine Pattern
+          </a>
+        </p>
       </figure>
 
       <p>
-        The Piacentine deck takes its name from Piacenza, a city in Emilia-Romagna at
-        the northern edge of the Po Valley. This is one of the most widely used card
-        styles across northern and central Italy, and many Italian players from these
-        regions consider the Piacentine deck to be the natural standard — the deck they
-        grew up with and associate with card games generally.
+        The Piacentine pattern is one of the principal northern Italian regional card
+        styles, associated with Piacenza and the surrounding area in Emilia-Romagna.
+        It is among the most widely used regional decks across northern and central
+        Italy, and many players from these regions consider it the natural standard —
+        the deck they grew up with and instinctively associate with card games.
       </p>
 
       <p>
-        Compared to the bold expressiveness of Sicilian and Neapolitan cards, the
-        Piacentine style is more restrained. The suit symbols are clearly drawn, the
-        figures on the court cards are upright and formal, and the overall design has a
-        clean precision that makes the cards easy to read across the table. That clarity
-        is likely part of why the Piacentine style spread so widely — it works well in
-        practical play.
+        Like the Trevisane pattern, the Piacentine court cards are double-ended, with
+        mirrored upper and lower halves so the figures read correctly from either
+        orientation. The artwork is bold and clearly structured: strong outlines, vivid
+        colours, and a distinctive court-card styling that is immediately recognisable
+        to anyone familiar with northern Italian card culture. The suit symbols are
+        sharply drawn and easy to read across the table, which likely contributed to
+        the pattern's wide adoption beyond its home region.
       </p>
 
       <p>
-        Scopa and Briscola are the primary games played with Piacentine cards in
-        Emilia-Romagna and the surrounding regions. The same rules apply as everywhere
-        else in Italy — the deck is the difference, not the game.
+        Piacentine cards are commonly used for Scopa, Briscola, Tressette, and other
+        traditional Italian games. The rules of those games remain identical regardless
+        of which regional deck is used — it is the visual character of the cards, and
+        the regional identity they carry, that differs.
       </p>
 
       {/* ── Trevisane Cards ── */}
