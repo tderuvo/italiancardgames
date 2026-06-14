@@ -339,18 +339,17 @@ export default function TressetteRulesPage() {
       <h2>Ready to Practice?</h2>
 
       <p>
-        The best way to lock in these rules is to play a few hands. A free browser version
-        of Tressette using a traditional 40-card Italian deck is coming to this site. No
-        download or signup will be required — you will be able to jump straight into a
-        game and apply everything covered on this page. Check back soon, or in the
-        meantime sharpen your skills with{' '}
-        <Link to="/play-briscola-online">Briscola</Link> or{' '}
-        <Link to="/play-scopa-online">Scopa</Link>, both of which use the same deck.
+        The best way to lock in these rules is to play a few hands. Tressette is now
+        playable free in your browser — no download or signup required. Jump straight in
+        and apply everything covered on this page. If you want more practice with the
+        same 40-card deck while building familiarity,{' '}
+        <Link to="/play-briscola-online">Briscola</Link> and{' '}
+        <Link to="/play-scopa-online">Scopa</Link> are also available.
       </p>
 
       <p>
         <Link to="/play-tressette-online" className="game-card__btn">
-          Play Tressette Online (Coming Soon) →
+          Play Tressette Online →
         </Link>
       </p>
 

@@ -36,10 +36,10 @@ export default function Header() {
           <NavLink
             to="/play-tressette-online"
             className={({ isActive }) =>
-              isActive ? 'nav-link nav-link--active nav-link--soon' : 'nav-link nav-link--soon'
+              isActive ? 'nav-link nav-link--active' : 'nav-link'
             }
           >
-            Tressette <em>soon</em>
+            Tressette
           </NavLink>
           <NavLink
             to="/rules"

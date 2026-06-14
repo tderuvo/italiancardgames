@@ -45,11 +45,12 @@ const GAMES: Game[] = [
   },
   {
     title: 'Tressette',
-    description: "Italy's classic 4-player partnership trick-taking game. Strategic, social, and steeped in Italian card tradition.",
+    description: "Italy's classic trick-taking game — no trump suit, follow suit strictly, and capture points across 10 tricks. Play free in your browser.",
     href: '/play-tressette-online',
-    btnLabel: 'Learn About Tressette →',
+    btnLabel: 'Play Tressette →',
     available: true,
-    comingSoon: true,
+    learnLink: '/tressette-rules',
+    learnLabel: 'New? Learn the rules →',
     emoji: '♥',
   },
 ];

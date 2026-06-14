@@ -56,7 +56,7 @@ export default function TressetteStrategyPage() {
         with the <Link to="/tressette-rules">Tressette rules guide</Link> first, then come back
         here. This page covers the Tressette tips and thinking habits that separate players who
         understand the game from players who win it. If you want to apply these ideas right away,{' '}
-        <Link to="/play-tressette-online">Tressette online</Link> is coming soon to this site.
+        <Link to="/play-tressette-online">Tressette is now playable online</Link> on this site.
       </p>
 
       <h2>Learn the Card Rankings First</h2>
@@ -333,7 +333,7 @@ export default function TressetteStrategyPage() {
 
       <TressetteTutorialVideo />
 
-      <h2>Play Tressette Online (Coming Soon)</h2>
+      <h2>Practice Tressette Online</h2>
 
       <p>
         Tressette strategy develops through repetition. The patterns described in this guide —
@@ -345,18 +345,17 @@ export default function TressetteStrategyPage() {
       </p>
 
       <p>
-        A free browser version of Tressette is coming to this site. No download or signup
-        will be required — you'll be able to play directly in your browser using a traditional
-        40-card Italian deck. Come back when it launches and use these ideas as a framework
-        for what to pay attention to. In the meantime,{' '}
+        Tressette is now playable free in your browser on this site — no download or signup
+        required. Play a few hands and use these ideas as a framework for what to pay
+        attention to. If you want to compare how strategic thinking differs between games,{' '}
         <Link to="/play-briscola-online">Briscola</Link> and{' '}
-        <Link to="/play-scopa-online">Scopa</Link> are available now — both use the same
-        deck and share strategic DNA with Tressette.
+        <Link to="/play-scopa-online">Scopa</Link> are also available — both use the same
+        40-card deck and share strategic DNA with Tressette.
       </p>
 
       <p>
         <Link to="/play-tressette-online" className="game-card__btn">
-          Play Tressette Online (Coming Soon) →
+          Play Tressette Online →
         </Link>
       </p>
 
