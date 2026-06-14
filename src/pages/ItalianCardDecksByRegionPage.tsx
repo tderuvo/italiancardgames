@@ -200,10 +200,16 @@ export default function ItalianCardDecksByRegionPage() {
       {/* ── Piacentine Cards ── */}
       <h2>Piacentine Cards (Carte Piacentine)</h2>
 
-      <div className="deck-placeholder" aria-label="Piacentine deck image placeholder">
-        <span>📷</span>
-        <p>Piacentine Deck — image coming soon</p>
-      </div>
+      <figure className="deck-figure">
+        <img
+          src="/images/piacentine-deck.png"
+          alt="Traditional Piacentine Italian playing cards"
+          className="deck-figure__img"
+        />
+        <figcaption className="deck-figure__caption">
+          Traditional Piacentine playing cards from Emilia-Romagna — widely used across northern and central Italy.
+        </figcaption>
+      </figure>
 
       <p>
         The Piacentine deck takes its name from Piacenza, a city in Emilia-Romagna at
