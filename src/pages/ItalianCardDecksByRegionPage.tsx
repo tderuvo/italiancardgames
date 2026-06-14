@@ -237,28 +237,55 @@ export default function ItalianCardDecksByRegionPage() {
       {/* ── Trevisane Cards ── */}
       <h2>Trevisane Cards (Carte Trevisane)</h2>
 
-      <div className="deck-placeholder" aria-label="Trevisane deck image placeholder">
-        <span>📷</span>
-        <p>Trevisane Deck — image coming soon</p>
-      </div>
+      <figure className="deck-figure">
+        <img
+          src="/images/trevisane-deck.png"
+          alt="Traditional Trevisane Italian playing cards"
+          className="deck-figure__img"
+        />
+        <figcaption className="deck-figure__caption">
+          Trevisane / Trevigiane pattern playing cards from Treviso.
+        </figcaption>
+        <p className="deck-figure__credit">
+          Image reference:{' '}
+          <a
+            href="https://www.wopc.co.uk/italy/trevisane-pattern"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            World of Playing Cards — Trevisane Pattern
+          </a>
+        </p>
+      </figure>
 
       <p>
-        The Trevisane deck comes from Treviso, a city in the Veneto region of
-        north-eastern Italy. Like the Piacentine style, it represents the northern
-        Italian preference for cleaner, more structured card illustration over the
-        warmer expressiveness of southern decks. The Trevisane visual style is among
-        the more stylised of the regional traditions — the court card figures are
-        distinctive and the overall design has an elegance that reflects the artistic
-        sensibility of the Veneto.
+        The Trevisane — also known as the Trevigiane — pattern takes its name from
+        Treviso, a city in the Veneto region of north-eastern Italy. It is a
+        double-ended regional Italian card pattern, meaning the court card figures are
+        mirrored so the card reads correctly from either end. This feature, along with
+        the deck's distinctive visual details, gives it an immediately recognisable
+        character among Italian regional decks.
       </p>
 
       <p>
-        The deck is closely associated with card playing in the Veneto and the
-        surrounding north-eastern regions. It is less widely distributed outside that
-        area than the Piacentine or Neapolitan styles, which is part of what makes it
-        a genuinely regional deck rather than a style that has spread across the country.
-        For players from the Veneto, the Trevisane deck is simply the deck — the one
-        that defines what Italian playing cards look like.
+        Several design elements set the Trevisane apart from other Italian regional
+        styles. The swords suit features curved, interlaced blades rather than the
+        straight swords found in southern decks. The batons are long and slender. The
+        aces of each suit carry Italian mottoes — short inscriptions that are part of
+        the traditional pattern and have been reproduced consistently across printings
+        for generations. Most distinctively, the King of Batons is associated with the
+        coat of arms of Treviso and bears the Latin inscription <em>Tarvisium</em> —
+        the historical Latin name for the city — making the deck a genuine expression
+        of local civic identity.
+      </p>
+
+      <p>
+        The Trevisane pattern is closely associated with card playing in the Veneto and
+        the surrounding north-eastern regions. It is less widely distributed outside
+        that area than the Piacentine or Neapolitan styles, which is part of what makes
+        it a genuinely regional deck rather than a style that has spread across the
+        country. For players from the Veneto, the Trevisane deck is simply the deck —
+        the one that defines what Italian playing cards look like.
       </p>
 
       {/* ── Sardinian Cards ── */}

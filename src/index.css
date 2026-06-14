@@ -787,7 +787,7 @@ img, svg { display: block; max-width: 100%; }
 /* Regional deck images */
 .deck-figure {
   margin: 1rem 0 1.25rem;
-  max-width: 600px;
+  max-width: 720px;
 }
 .deck-figure__img {
   width: 100%;
@@ -802,6 +802,21 @@ img, svg { display: block; max-width: 100%; }
   color: var(--text-muted);
   font-style: italic;
   line-height: 1.5;
+}
+.deck-figure__credit {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+.deck-figure__credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.deck-figure__credit a:hover {
+  opacity: 1;
+  color: var(--green);
 }
 
 /* Placeholder shown where regional deck images will eventually live */
