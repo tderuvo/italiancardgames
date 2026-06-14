@@ -109,10 +109,16 @@ export default function ItalianCardDecksByRegionPage() {
       {/* ── Sicilian Cards ── */}
       <h2>Sicilian Cards (Carte Siciliane)</h2>
 
-      <div className="deck-placeholder" aria-label="Sicilian deck image placeholder">
-        <span>📷</span>
-        <p>Sicilian Deck — image coming soon</p>
-      </div>
+      <figure className="deck-figure">
+        <img
+          src="/images/sicilian-deck.png"
+          alt="Traditional Sicilian Italian playing cards"
+          className="deck-figure__img"
+        />
+        <figcaption className="deck-figure__caption">
+          Traditional Sicilian playing cards, commonly used for Scopa and Briscola.
+        </figcaption>
+      </figure>
 
       <p>
         Sicily's card tradition reflects the island's complex history as a crossroads of

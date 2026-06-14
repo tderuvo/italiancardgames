@@ -784,6 +784,26 @@ img, svg { display: block; max-width: 100%; }
   font-style: italic;
 }
 
+/* Regional deck images */
+.deck-figure {
+  margin: 1rem 0 1.25rem;
+  max-width: 600px;
+}
+.deck-figure__img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  display: block;
+  box-shadow: var(--shadow-md);
+}
+.deck-figure__caption {
+  margin-top: 0.45rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-style: italic;
+  line-height: 1.5;
+}
+
 /* Placeholder shown where regional deck images will eventually live */
 .deck-placeholder {
   background: var(--warm-bg);
