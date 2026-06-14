@@ -1,17 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import TressetteTutorialVideo from '../components/TressetteTutorialVideo';
+import TressetteGame from '../games/tressette/TressetteGame';
 
 export default function TressettePage() {
-  const [notified, setNotified] = useState(false);
-
   useEffect(() => {
     document.title = 'Play Tressette Online – Traditional Italian Card Game';
 
     const meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
     if (meta) {
       meta.content =
-        'Learn how to play Tressette online with a traditional Italian 40-card deck. Explore rules, strategy, scoring, and gameplay basics.';
+        'Play Tressette online free — a traditional Italian trick-taking card game with a 40-card deck. No download or signup required.';
     }
 
     let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
@@ -50,35 +49,17 @@ export default function TressettePage() {
       </p>
 
       <p>
-        A playable version of Tressette is coming soon to Italian Card Games. In the
-        meantime, this page covers how the game works, what makes it strategically
-        interesting, and how it fits into the broader Italian card game tradition. If you
-        want to play something now, try{' '}
+        Tressette is now playable on Italian Card Games — free in your browser, no download
+        or signup required. This page also covers how the game works, its cultural
+        significance, and what makes it one of the most strategically rewarding card games
+        in the Italian tradition. If you enjoy Tressette, try{' '}
         <Link to="/play-briscola-online">Briscola</Link> or{' '}
-        <Link to="/play-scopa-online">Scopa</Link> — both use the same 40-card deck
-        and are available free in your browser today.
+        <Link to="/play-scopa-online">Scopa</Link> — both use the same 40-card deck and
+        are free alongside Tressette.
       </p>
 
-      {/* ── Coming Soon banner ── */}
-      <div className="tressette-soon-banner">
-        <span className="tressette-soon-badge">Coming Soon</span>
-        <p>
-          A free browser version of Tressette is in development. No download or signup
-          will be required.
-        </p>
-        {notified ? (
-          <p className="tressette-notified">
-            ✓ Thanks — we'll add it to the site soon.
-          </p>
-        ) : (
-          <button
-            className="game-card__btn"
-            onClick={() => setNotified(true)}
-          >
-            Notify Me When It's Ready
-          </button>
-        )}
-      </div>
+      {/* ── Playable game ── */}
+      <TressetteGame />
 
       <h2>What is Tressette?</h2>
 
@@ -284,57 +265,22 @@ export default function TressettePage() {
         for that game.
       </p>
 
-      <h2>Play Tressette Online Soon</h2>
+      <h2>Learn the Rules and Improve Your Strategy</h2>
 
       <p>
-        A playable browser version of Tressette is coming to Italian Card Games. It will
-        use a traditional 40-card deck, run in your browser without any download or signup,
-        and follow the standard Tressette rules described on this page.
+        The game above uses simplified 2-player rules — a good way to learn the ranking
+        and suit-following mechanics. The full <Link to="/tressette-rules">Tressette
+        rules guide</Link> covers dealing, scoring, the traditional glossary (Busso,
+        Striscio, Volo), and the four-player partnership format. Once the rules are
+        clear, the <Link to="/tressette-strategy">Tressette strategy guide</Link> covers
+        card tracking, partnership coordination, and how to think several tricks ahead.
       </p>
-
-      <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
-        Want to learn before the playable version launches?{' '}
-        <a
-          href="https://www.youtube.com/watch?v=73t4yReh4TM"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Watch a quick tutorial →
-        </a>
-      </p>
-
-      {notified ? (
-        <p className="tressette-notified">✓ You're on the list — thanks for your interest!</p>
-      ) : (
-        <>
-          <p>
-            While you wait, both of the currently playable games use the same Italian deck
-            and share strategic DNA with Tressette:
-          </p>
-          <p style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', margin: '1rem 0' }}>
-            <Link to="/play-briscola-online" className="game-card__btn">
-              Play Briscola →
-            </Link>
-            <Link to="/play-scopa-online" className="game-card__btn" style={{ background: 'var(--green-dark)' }}>
-              Play Scopa →
-            </Link>
-          </p>
-          <p>
-            <button
-              className="tressette-notify-btn"
-              onClick={() => setNotified(true)}
-            >
-              Notify Me When Tressette Is Ready
-            </button>
-          </p>
-        </>
-      )}
 
       <h2>More Italian Card Games</h2>
 
       <p>
         All games on this site use the traditional 40-card Italian deck. Here is what's
-        available now:
+        available:
       </p>
 
       <ul>
@@ -347,6 +293,14 @@ export default function TressettePage() {
           <strong><Link to="/play-briscola-online">Play Briscola Online</Link></strong> —
           Italy's most popular trick-taking game. Trump management, card values, and 20
           tricks to decide who reaches 61 points first.
+        </li>
+        <li>
+          <strong><Link to="/tressette-rules">Tressette Rules</Link></strong> — the complete
+          beginner guide: card rankings, dealing, trick resolution, scoring, and glossary.
+        </li>
+        <li>
+          <strong><Link to="/tressette-strategy">Tressette Strategy Guide</Link></strong> —
+          card tracking, partnership signals, suit control, and endgame planning.
         </li>
         <li>
           <strong><Link to="/briscola-strategy">Briscola Strategy Guide</Link></strong> — how

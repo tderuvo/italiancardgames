@@ -775,6 +775,26 @@ img, svg { display: block; max-width: 100%; }
   .bg-trump-deck-row    { gap: 0.9rem; }
 }
 
+/* ── Tressette game (.tg prefix) ─────────────────────────────────────────── */
+
+/* Illegal cards (can't be played because suit-following is required) */
+.tg-card--illegal {
+  opacity: 0.35;
+  cursor: not-allowed !important;
+  filter: grayscale(40%);
+}
+
+/* In fullscreen, 10-card hands don't fan well — override to normal flex wrap */
+.tg.sg--fullscreen .sg-section--player .sg-cards,
+.tg.sg--fullscreen .sg-section--computer .sg-cards {
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+.tg.sg--fullscreen .sg-section--player .sg-cards > * + *,
+.tg.sg--fullscreen .sg-section--computer .sg-cards > * + * {
+  margin-left: 0;
+}
+
 /* ── Tressette coming-soon page ──────────────────────────────────────────── */
 .tressette-soon-banner {
   background: var(--green-light);
