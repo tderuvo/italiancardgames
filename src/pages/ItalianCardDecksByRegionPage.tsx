@@ -152,10 +152,16 @@ export default function ItalianCardDecksByRegionPage() {
       {/* ── Neapolitan Cards ── */}
       <h2>Neapolitan Cards (Carte Napoletane)</h2>
 
-      <div className="deck-placeholder" aria-label="Neapolitan deck image placeholder">
-        <span>📷</span>
-        <p>Neapolitan Deck — image coming soon</p>
-      </div>
+      <figure className="deck-figure">
+        <img
+          src="/images/neapolitan-deck.png"
+          alt="Traditional Neapolitan Italian playing cards"
+          className="deck-figure__img"
+        />
+        <figcaption className="deck-figure__caption">
+          Traditional Neapolitan playing cards — the most internationally recognised Italian regional deck.
+        </figcaption>
+      </figure>
 
       <p>
         The Neapolitan deck is probably the most internationally recognised Italian
