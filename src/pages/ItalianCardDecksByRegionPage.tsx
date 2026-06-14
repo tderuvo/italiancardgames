@@ -303,28 +303,52 @@ export default function ItalianCardDecksByRegionPage() {
       {/* ── Sardinian Cards ── */}
       <h2>Sardinian Cards (Carte Sarde)</h2>
 
-      <div className="deck-placeholder" aria-label="Sardinian deck image placeholder">
-        <span>📷</span>
-        <p>Sardinian Deck — image coming soon</p>
-      </div>
+      <figure className="deck-figure">
+        <img
+          src="/images/sarde-deck.png"
+          alt="Traditional Sardinian Italian playing cards"
+          className="deck-figure__img"
+        />
+        <figcaption className="deck-figure__caption">
+          Sarde pattern playing cards used throughout Sardinia.
+        </figcaption>
+        <p className="deck-figure__credit">
+          Image reference:{' '}
+          <a
+            href="https://www.wopc.co.uk/italy/modiano/sarde-pattern"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            World of Playing Cards — Sarde Pattern
+          </a>
+        </p>
+      </figure>
 
       <p>
-        Sardinia occupies a unique position in Italian culture, and its card tradition
-        reflects that distinctiveness. Sardinian cards are among the most visually
-        individual of all Italian regional decks — the imagery draws on the island's
-        own artistic heritage rather than the mainland Spanish-influenced traditions that
-        shaped decks in Sicily and Naples, or the northern printing styles that produced
-        the Piacentine and Trevisane patterns.
+        The Sarde pattern is the traditional playing card deck of Sardinia, and modern
+        examples are commonly produced by Modiano, the Trieste-based publisher best
+        known for printing several of Italy's most recognisable regional decks. Like all
+        Italian regional patterns, the Sarde deck preserves the traditional four suits —
+        Coins, Cups, Swords, and Batons — across a 40-card structure that has remained
+        consistent for centuries.
       </p>
 
       <p>
-        The figures on Sardinian court cards often incorporate elements associated with
-        traditional Sardinian costume and iconography, giving the deck a visual identity
-        that is immediately recognisable to anyone familiar with the island's culture.
-        Sardinian card games follow the same basic rules as mainland Italian games — Scopa,
-        Briscola, and local variants of trick-taking games — but the deck in hand carries
-        a sense of the island's distinct cultural identity that no mainland deck can
-        replicate.
+        Sardinia occupies a unique position in Italian culture, and the Sarde deck
+        reflects that distinctiveness. The artwork is immediately recognisable as
+        different from mainland patterns — whether the Spanish-influenced styles of
+        Sicily and Naples, or the more structured northern designs of the Piacentine
+        and Trevisane traditions. The Sarde pattern has its own visual character rooted
+        in the island's long-standing card-playing culture, and its court card styling
+        and regional iconography give it an identity that belongs specifically to
+        Sardinia rather than to the broader Italian mainland tradition.
+      </p>
+
+      <p>
+        Scopa and Briscola are the games most commonly played with Sarde cards across
+        the island. The rules are identical to the standard versions played throughout
+        Italy — it is the deck itself, and the cultural weight it carries, that marks
+        the Sardinian card-playing tradition as distinctly its own.
       </p>
 
       {/* ── Which Deck Is Best ── */}
